@@ -37,3 +37,18 @@ extra:
       link: https://discord.com/servers/backstage-687207715902193673
     - icon: fontawesome/brands/github
       link: https://github.com/PagerDuty/backstage-plugin-docs
+
+nav:
+  - Overview: index.md
+  - Getting started: 
+    - On PagerDuty: getting-started/pagerduty.md 
+    - On Backstage: getting-started/backstage.md
+  - Capabilities: capabilities.md
+  - Advanced:
+    - Service annotiations: advanced/annotate-with-service.md
+    - Configure Events url: advanced/configure-events-url.md
+    - Enable Read-only mode: advanced/enable-read-only-mode.md
+  - Security: security.md
+  - Migration: migration.md
+  - Support: support.md
+  - Contributing: contributing.md
