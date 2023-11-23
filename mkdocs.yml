@@ -41,8 +41,8 @@ extra:
 nav:
   - Overview: index.md
   - Getting started: 
-    - On PagerDuty: getting-started/pagerduty.md 
-    - On Backstage: getting-started/backstage.md
+    - PagerDuty integration: getting-started/pagerduty.md 
+    - Configuring Backstage: getting-started/backstage.md
   - Capabilities: capabilities.md
   - Advanced:
     - Service annotiations: advanced/annotate-with-service.md
@@ -52,3 +52,8 @@ nav:
   - Migration: migration.md
   - Support: support.md
   - Contributing: contributing.md
+
+markdown_extensions:
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - admonition
