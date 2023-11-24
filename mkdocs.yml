@@ -47,7 +47,8 @@ nav:
   - Capabilities: capabilities.md
   - Advanced:
     - Configure Events url: advanced/configure-events-url.md
-    - Enable Read-only mode: advanced/enable-read-only-mode.md
+    - Enable read-only mode: advanced/enable-read-only-mode.md
+  - Security: security.md
   - Migration: migration.md
   - Support: support.md
   - Contributing: contributing.md
