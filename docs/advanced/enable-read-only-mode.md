@@ -1,12 +1,12 @@
 # Enable read-only mode
 
-PagerDuty plugin allows users to create incidents directly from Backstage. This feature is enabled by default but you can decide to disable it.
+The PagerDuty plugin allows users to create incidents directly from Backstage. This feature is enabled by default but you can choose to disable it.
 
 ![create-incident-button](../images/create-incident-button.png)
 
 ## Component read-only mode
 
-To suppress the rendering of the actionable incident creation button, the `PagerDutyCard` can also be instantiated in `readOnly` mode as shown below.
+To suppress the rendering of the actionable incident creation button, the `PagerDutyCard` can be instantiated in `readOnly` mode as shown below.
 
 ```html
 <EntityPagerDutyCard readOnly>

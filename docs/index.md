@@ -1,6 +1,6 @@
 # Welcome 👋
 
-If you are looking for documentation on how to use and configure the PagerDuty plugin for Backstage you are in the right place!
+If you are looking for documentation on how to use and configure the **PagerDuty plugin for Backstage** you are in the right place!
 
 Before you start let's just set our baseline straight and explain who we are and why we are doing this.
 

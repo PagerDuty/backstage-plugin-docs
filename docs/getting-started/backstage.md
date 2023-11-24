@@ -6,7 +6,7 @@
 ## Installing the plugin
 
 !!! note
-    This following steps assume you already have a Backstage project created. If that is not the case, follow the [Getting Started](https://backstage.io/docs/getting-started/) guide on Backstage.io to create one or create one by running `npx @backstage/create-app` on your terminal.
+    The following steps assume you already have a Backstage project created. If that is not the case, follow the [Getting Started](https://backstage.io/docs/getting-started/) guide on Backstage.io to create one or create one by running `npx @backstage/create-app` on your terminal.
 
 To install the PagerDuty plugin into Backstage run the following command from your Backstage root directory.
 

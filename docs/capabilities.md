@@ -1,18 +1,18 @@
 # Plugin capabilities
 
-The purpose of the PagerDuty plugin for Backstage is to bring some of the capabilities of PagerDuty into Backstage to reduce distractions and provide users more visibility on the status of each service.
+The purpose of the **PagerDuty plugin for Backstage** is to bring some of the capabilities of PagerDuty into Backstage to reduce distractions and provide users more visibility on the status of each service.
 
 Currently the plugin provides a limited set of features that we view as the core capabilities used by Developers, Platform Engineers, SREs and other type of stakeholders. Theses are listed below.
 
 ## View any open incidents
 
-The plugin list all open incidents on a specific service and allows you to navigate to the incident detail page on PagerDuty console.
+The plugin lists all open incidents on a specific service and allows you to navigate to the incident detail page in PagerDuty.
 
 ![view-open-incidents](images/list-incidents.png)
 
 ## View change events associated to a service
 
-See all recent changes sent to PagerDuty through integrations like GitHub, GitLab, Azure DevOps and many others. If your service is running into issues you can quickly identify recent changes that might be related to the root cause of the incident in the first place.
+See all recent changes sent to PagerDuty through integrations like GitHub, GitLab, Azure DevOps and many others. If your service is running into issues you can quickly identify recent changes that might be related to the root cause of the incident.
 
 ![view-recent-changes](images/view-recent-changes.png)
 
