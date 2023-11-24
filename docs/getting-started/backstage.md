@@ -109,7 +109,7 @@ proxy:
 Start your Backstage app, passing the PagerDuty API token as an environment variable:
 
 ```bash
-PAGERDUTY_TOKEN='<TOKEN>' yarn start
+PAGERDUTY_TOKEN='<TOKEN>' yarn dev
 ```
 
 This will proxy the request by adding an `Authorization` header with the provided token.
