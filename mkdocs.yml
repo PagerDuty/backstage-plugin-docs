@@ -7,7 +7,8 @@ theme:
     text: 'Open Sans'
 
   features:
-    - content.action.edit
+    - content.code.copy
+    - content.code.annotate
 
   palette: 
     - media: '(prefers-color-scheme: light)'
@@ -48,7 +49,6 @@ nav:
     - Service annotiations: advanced/annotate-with-service.md
     - Configure Events url: advanced/configure-events-url.md
     - Enable Read-only mode: advanced/enable-read-only-mode.md
-  - Security: security.md
   - Migration: migration.md
   - Support: support.md
   - Contributing: contributing.md
@@ -57,3 +57,10 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
