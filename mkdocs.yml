@@ -50,8 +50,7 @@ nav:
     - Enable read-only mode: advanced/enable-read-only-mode.md
   - Security: security.md
   - Migration: migration.md
-  - Support: support.md
-  - Contributing: contributing.md
+  - Community: community.md
 
 markdown_extensions:
   - pymdownx.tasklist:
