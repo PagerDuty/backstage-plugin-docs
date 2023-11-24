@@ -48,6 +48,7 @@ nav:
   - Advanced:
     - Configure Events url: advanced/configure-events-url.md
     - Enable read-only mode: advanced/enable-read-only-mode.md
+    - Create an homepage component: advanced/homepage-component.md
   - Security: security.md
   - Migration: migration.md
   - Community: community.md
