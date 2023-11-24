@@ -46,7 +46,6 @@ nav:
     - Configuring Backstage: getting-started/backstage.md
   - Capabilities: capabilities.md
   - Advanced:
-    - Service annotiations: advanced/annotate-with-service.md
     - Configure Events url: advanced/configure-events-url.md
     - Enable Read-only mode: advanced/enable-read-only-mode.md
   - Migration: migration.md
