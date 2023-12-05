@@ -44,15 +44,18 @@ The plugin was initially started by Backstage and then transitioned into PagerDu
 - Quickly check who is on call for a service.
 - Trigger an incident to the currently on call responder(s) for a service.
 
-The scope for the plugin is quite limited at the time but we are working on bringing new features based on customer feedback. We welcome all feedback so if you have any [bugs](https://github.com/PagerDuty/backstage-plugin/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=) to report or [feature requests](https://github.com/PagerDuty/backstage-plugin/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=) to raise we **thank you**.
+The scope for the plugin is quite limited at the time but we are working on bringing new features based on customer feedback. We welcome all feedback so if you have any **bugs** to report or **feature requests** to raise we **THANK YOU**.
+
+- **Frontend plugin** ([bugs](https://github.com/PagerDuty/backstage-plugin/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=)) ([feature requests](https://github.com/PagerDuty/backstage-plugin/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=))
+- **Backend plugin** ([bugs](https://github.com/PagerDuty/backstage-plugin-backend/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=)) ([feature requests](https://github.com/PagerDuty/backstage-plugin-backend/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=))
 
 ## Roadmap
 
 We are working on some cool new features and capabilities. Here are some of them:
 
+- [x] Create scaffolder action to allow services to be created in PagerDuty
 - [ ] Improving UI for the existing PagerDuty Card
 - [ ] Adding support for adding multiple services on the same card
 - [ ] Adding support for a Team PagerDuty card
-- [ ] Create scaffolder action to allow services to be created in PagerDuty
 
 For more details on what is in progress and what we are considering refer to the [project page](https://github.com/orgs/PagerDuty/projects/22) on GitHub.

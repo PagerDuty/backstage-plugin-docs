@@ -44,7 +44,7 @@ Now that you have an API Key to query PagerDuty services information the next st
 
 ### **Create a service integration for Backstage**
 
-Creating a service integration in PagerDuty is the default mechanism to connect services with alerts coming from third-party tools and platforms. In order to create a service integration you can follow **two different approches**:
+Creating a service integration in PagerDuty is the default mechanism to connect services with alerts coming from third-party tools and platforms. In order to create a service integration you can follow **three different approches**:
 
 1. **If you are adding your integration to an existing service:**
      1. From the top menu, select **Services**.
@@ -59,5 +59,6 @@ Creating a service integration in PagerDuty is the default mechanism to connect 
         On this screen you can update the integration name to something that allows you to easily identify the Backstage instance you are connecting to.
 
 2. **If you are creating a new service for your integration:** Follow the instructions in the documentation that shows how to [create a service](https://support.pagerduty.com/docs/services-and-integrations#create-a-service) and select **Backstage** as the **Integration Type** in step 5.
+3. **If you want to automate service creation with Software Template:** Follow the steps in [Create PagerDuty service with Software Templates](/advanced/create-service-software-template).
 
 If you were successful in following the above steps you are ready to move to the [Backstage configuration](/getting-started/backstage).

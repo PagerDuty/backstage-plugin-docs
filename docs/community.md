@@ -4,7 +4,7 @@
 
 ## Support
 
-If you need help with this plugin, please open an issue in [GitHub](https://github.com/PagerDuty/backstage-plugin), reach out on the [Backstage Discord server](https://discord.gg/backstage-687207715902193673) or [PagerDuty's community forum](https://community.pagerduty.com/).
+If you need help with this plugin, please open an issue in GitHub ([frontend](https://github.com/PagerDuty/backstage-plugin), [backend](https://github.com/PagerDuty/backstage-plugin-backend)), reach out on the [Backstage Discord server](https://discord.gg/backstage-687207715902193673) or [PagerDuty's community forum](https://community.pagerduty.com/).
 
 ## Contributing
 

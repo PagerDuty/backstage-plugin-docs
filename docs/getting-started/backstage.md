@@ -11,16 +11,18 @@
 To install the PagerDuty plugin into Backstage run the following command from your Backstage root directory.
 
 ```bash
-yarn add --cwd packages/app @pagerduty/backstage-plugin # (1)!
+yarn add --cwd packages/app @pagerduty/backstage-plugin # (1)! 
+yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend # (2)! 
 ```
 
 1. This command adds `@pagerduty/backstage-plugin` package to the `packages/app` folder because it is a frontend plugin.
+2. This command adds `@pagerduty/backstage-plugin-backend` package to the `packages/backend` folder because it is a backend plugin.
 
 **That's it!** Now it's time to add the plugin to Backstage and your services.
 
-## Add the plugin to your application
+## Add the frontend plugin to your application
 
-The plugin needs to be added to your application and currently that requires some code changes to the Backstage application. We will do that by updating the `EntityPage.tsx` file in `packages/app/src/components/catalog`.
+The frontend plugin needs to be added to your application and currently that requires some code changes to the Backstage application. We will do that by updating the `EntityPage.tsx` file in `packages/app/src/components/catalog`.
 
 Add the following imports to the top of the file:
 
