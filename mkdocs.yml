@@ -74,6 +74,9 @@ nav:
   - Security: security.md
   - Migration: migration.md
   - Community: community.md
+  - Release Notes: 
+    - Frontend plugin: release-notes/frontend.md
+    - Backend plugin: release-notes/backend.md
 
 markdown_extensions:
   - pymdownx.tasklist:
