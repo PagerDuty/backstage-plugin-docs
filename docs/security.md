@@ -27,3 +27,8 @@ proxy:
 ```
 
 1. Prohibits the `/pagerduty` proxy endpoint from servicing non-GET requests
+
+!!! note
+    There is work in progress to migrate all existing requests to PagerDuty APIs through the proxy to the backend plugin. Once this is complete, the proxy configuration will be **deprecated**.
+
+    Local APIs are still available for other plugins to access. Still the data exposed will be the minimum necessary for Backstage to work properly instead of all the data. 

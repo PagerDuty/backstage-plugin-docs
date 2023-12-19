@@ -106,6 +106,25 @@ proxy:
       Authorization: Token token=${PAGERDUTY_TOKEN}
 ```
 
+!!! note
+    Currently the plugin leverages Backstage proxy to call PagerDuty APIs.
+
+    **Disclaimer:** There is active work to deprecate and replace the proxy in future versions for added security.
+
+### Optional: Configure Backend plugin API credentials
+
+The PagerDuty backend plugin exposes local APIs that query PagerDuty APIs without going through the proxy. Therefore it requires access to the API Token used in the previous step.
+
+If you plan to use the backend plugin add the following to your `app-config.yaml` file.
+
+```yaml
+pagerDuty:
+  apiToken: ${PAGERDUTY_TOKEN}
+```
+
+!!! note
+    In future releases this configuration will replace the current configuration on the Backstage proxy and therefore remove the duplicate configuration key.
+
 ## Test your configuration
 
 Start your Backstage app, passing the PagerDuty API token as an environment variable:
