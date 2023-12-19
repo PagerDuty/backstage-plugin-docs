@@ -1,5 +1,24 @@
 # Release notes for Frontend plugin
 
+## > 0.7.3
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.7.3)
+
+### Summary
+
+This release updates the Backstage plugin configuration schema to add support for `apiToken`.
+
+```yaml
+pagerDuty:
+   apiToken: u+a81u12y4ax
+```
+
+The latest release of the backend plugin ([0.2.0](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.2.0)) required a schema change for the plugin to start successfully. It does not introduce new features or capabilities to this plugin but it makes sure that the schemas match and avoid misconfigurations.
+
+### 🔧 Maintenance
+
+- chore(schema): updated config schema to match backend plugin
+
 ## > 0.7.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.7.2)

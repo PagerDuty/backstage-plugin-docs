@@ -60,6 +60,34 @@ Once all the information is provided by the user we will:
 3. publish the code to GitHub
 4. register the component in Backstage
 
+!!! note
+    For the following template to work, you need to configure the `apiToken` in `app-config.yaml` file. If you haven't done so, follow the steps in [Configure Backend plugin API credentials](/getting-started/backstage/#optional-configure-backend-plugin-api-credentials)
+
+    **Note:** If you don't setup this property in your configuration, the backend plugin will fail to start.
+
+!!! note
+    The UI component that allows users to select the *Escalation Policy* when creating a new service in PagerDuty depends on an open source component. For the template to work properly please install it before.
+
+    ```bash
+    yarn add --cwd packages/app @roadiehq/plugin-scaffolder-frontend-module-http-request-field
+    ```
+
+    Once it is installed, go to `/packages/app/src/App.tsx` and find `<ScaffolderPage />`. Add the UI component to `ScaffolderFieldExtensions`. It should look like this when you finish.
+
+    ```yaml
+    import { ScaffolderFieldExtensions } from '@backstage/plugin-scaffolder-react';
+    import { SelectFieldFromApiExtension } from '@roadiehq/plugin-scaffolder-frontend-module-http-request-field';
+
+    ...
+
+    <Route path="/create" element={<ScaffolderPage />}>
+      <ScaffolderFieldExtensions>
+        <SelectFieldFromApiExtension />
+      </ScaffolderFieldExtensions>
+    </Route>
+    ```
+Once all requirements are in-place, create a `template.yaml` file under `examples/template` and copy the following code in there.
+
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
@@ -73,6 +101,10 @@ spec:
 
   parameters:
     - title: PagerDuty Service
+      required:
+        - service_name
+        - description
+        - escalation_policy_id
       properties:
         service_name:
           title: Service Name
@@ -86,7 +118,15 @@ spec:
           title: Escalation Policy ID
           type: string
           description: The ID of the escalation policy to associate with the service
-    
+          ui:field: SelectFieldFromApi #(1)!
+          ui:options: #(2)!
+            title: PagerDuty Escalation Policy
+            description: Select an escalation policy from PagerDuty
+            path: 'pagerduty/escalation_policies' #(3)!
+            labelSelector: 'label'
+            valueSelector: 'value'
+            placeholder: '---'
+
     - title: Choose a location
       required:
         - repoUrl
@@ -134,7 +174,6 @@ spec:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info'
     
-
   output:
     links:
       - title: Open in PagerDuty
@@ -144,5 +183,9 @@ spec:
         text: ${{ steps['pagerdutyService'].output.integrationKey }}
 
 ```
+
+1. Open source dropdown component from `@roadiehq` that queries data from a local API
+2. Options for the dropdown component
+3. The local api exposed by the PagerDuty backend plugin that retrieves a list of key/value pairs
 
 This is an easy mechanism for onboarding new services in an automated way, ensuring that Backstage and PagerDuty services can be **provisioned with one step and in a self-service way**.
