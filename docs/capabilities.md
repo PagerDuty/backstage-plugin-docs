@@ -45,7 +45,7 @@ The PagerDuty backend plugin exposes a custom action that can be used in project
 
 ![create-pagerduty-service](images/create-pagerduty-service.png)
 
-Follow [these steps](/advanced/create-service-software-template) to add the custom action to a template.
+Follow [these steps](../advanced/create-service-software-template) to add the custom action to a template.
 
 ## The future
 
