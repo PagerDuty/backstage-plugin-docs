@@ -126,6 +126,18 @@ spec:
             labelSelector: 'label'
             valueSelector: 'value'
             placeholder: '---'
+        alert_grouping: #(4)!
+          title: Alert Grouping
+          type: string
+          description: Reduce noise by grouping similar alerts - Defaults to 'None'.
+          enum:
+            - 'time'
+            - 'intelligent'
+            - 'content_based'
+          enumNames:
+            - 'Time-based grouping'
+            - 'Intelligent grouping'
+            - 'Content-based grouping'
 
     - title: Choose a location
       required:
@@ -147,6 +159,7 @@ spec:
         name: ${{ parameters.service_name }}
         description: ${{ parameters.description }}
         escalationPolicyId: ${{ parameters.escalation_policy_id }}
+        alertGrouping: ${{ parameters.alert_grouping }} #(5)!
     
     - id: fetch-base
       name: Fetch Base
@@ -187,5 +200,7 @@ spec:
 1. Open source dropdown component from `@roadiehq` that queries data from a local API
 2. Options for the dropdown component
 3. The local api exposed by the PagerDuty backend plugin that retrieves a list of key/value pairs
+4. This UI field is optional. If you want to enforce a specific method you can just set the value in the backend component.
+5. This parameter is optional. You can enforce a specific method by choosing 'intelligent', 'time' or 'content_based'. If not defined, no alert grouping will be configured.
 
 This is an easy mechanism for onboarding new services in an automated way, ensuring that Backstage and PagerDuty services can be **provisioned with one step and in a self-service way**.
