@@ -202,5 +202,6 @@ spec:
 3. The local api exposed by the PagerDuty backend plugin that retrieves a list of key/value pairs
 4. This UI field is optional. If you want to enforce a specific method you can just set the value in the backend component.
 5. This parameter is optional. You can enforce a specific method by choosing 'intelligent', 'time' or 'content_based'. If not defined, no alert grouping will be configured.
+   **[Requires AIOps](https://www.pagerduty.com/platform/aiops/).**
 
 This is an easy mechanism for onboarding new services in an automated way, ensuring that Backstage and PagerDuty services can be **provisioned with one step and in a self-service way**.

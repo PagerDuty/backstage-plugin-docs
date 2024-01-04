@@ -1,5 +1,25 @@
 # Release notes for Backend plugin
 
+## > 0.2.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.2.1)
+
+## Summary
+
+This release introduces the capacity to **enable noise reduction through alert grouping and auto pause of notifications**.
+
+**Note:** This feature requires AIOps. If you don't have the required plan alert grouping will not be enabled.
+
+![create-service-with-noise-reduction](../images/service-noise-reduction.png)
+
+The user will be able to pass an optional parameter (intelligent, time, content_based) from within a software template and during service creation alert grouping will be enabled automatically and using recommended defaults.
+
+Auto pause of notifications will also be enabled by default.
+
+### Changes
+
+- feat: add support for alert grouping
+
 ## > 0.2.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.2.0)

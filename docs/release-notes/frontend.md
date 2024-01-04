@@ -1,5 +1,17 @@
 # Release notes for Frontend plugin
 
+## > 0.7.4
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.7.4)
+
+### Summary
+
+This release includes a fix to a bug that prevented the PagerDutyCard from refreshing when users leveraged the Backstage search to navigate between components.
+
+### 🐛 Bug fixes
+
+- fix: component now refreshes when navigating between components from Search
+
 ## > 0.7.3
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.7.3)
