@@ -115,7 +115,7 @@ proxy:
 
 If you followed the steps in *"Installing the plugin"*, the backend plugin for PagerDuty is now added to your application but in order for it to expose its capabilities to the frontend plugin you need to configure it.
 
-Create a new file called *pagerduty.ts* at *packages/backend/src/plugins/pagerduty.ts* and add the following content:
+Create a new file called `pagerduty.ts` at `packages/backend/src/plugins/pagerduty.ts` and add the following content:
 
 ```Typescript
 import { Router } from 'express';
@@ -132,7 +132,9 @@ export default async function createPlugin(
 }
 ```
 
-This creates the backend plugin that you can now configure in your application. In *packages/backend/src/index.ts* import your plugin and add a route for the APIs exposed by PagerDuty's backend plugin.
+This creates the backend plugin that you can now configure in your application. 
+
+In `packages/backend/src/index.ts` import your plugin and add a route for the APIs exposed by PagerDuty's backend plugin.
 
 ```TypeScript
 import pagerduty from './plugins/pagerduty';
