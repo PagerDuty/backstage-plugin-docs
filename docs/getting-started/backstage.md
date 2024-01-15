@@ -64,7 +64,7 @@ const overviewContent = (
 
 Now the PagerDuty plugin will be displayed in all your components that include PagerDuty annotations.
 
-## Configure the plugin
+## Configure the Frontend plugin
 
 The frontend plugin for PagerDuty is now added to your application but in order for it to show you need to configure your entities and the application itself.
 
@@ -111,7 +111,42 @@ proxy:
 
     **Disclaimer:** There is active work to deprecate and replace the proxy in future versions for added security.
 
-### Optional: Configure Backend plugin API credentials
+## Add the backend plugin to your application
+
+If you followed the steps in *"Installing the plugin"*, the backend plugin for PagerDuty is now added to your application but in order for it to expose its capabilities to the frontend plugin you need to configure it.
+
+Create a new file called `pagerduty.ts` at `packages/backend/src/plugins/pagerduty.ts` and add the following content:
+
+```Typescript
+import { Router } from 'express';
+import { PluginEnvironment } from '../types';
+import { createRouter } from '@pagerduty/backstage-plugin-backend';
+
+export default async function createPlugin(
+    env: PluginEnvironment,
+): Promise<Router> {
+    return await createRouter({
+        config: env.config,
+        logger: env.logger,
+    });
+}
+```
+
+This creates the backend plugin that you can now configure in your application. 
+
+In `packages/backend/src/index.ts` import your plugin and add a route for the APIs exposed by PagerDuty's backend plugin.
+
+```TypeScript
+import pagerduty from './plugins/pagerduty';
+// ...
+async function main() {
+  // ...
+  const pagerdutyEnv = useHotMemoize(module, () => createEnv('pagerduty'));
+  // ...
+  apiRouter.use('/pagerduty', await todo(pagerdutyEnv));
+```
+
+### Configure Backend plugin API credentials
 
 The PagerDuty backend plugin exposes local APIs that query PagerDuty APIs without going through the proxy. Therefore it requires access to the API Token used in the previous step.
 
