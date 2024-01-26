@@ -8,15 +8,19 @@
 !!! note
     The following steps assume you already have a Backstage project created. If that is not the case, follow the [Getting Started](https://backstage.io/docs/getting-started/) guide on Backstage.io to create one or create one by running `npx @backstage/create-app` on your terminal.
 
-To install the PagerDuty plugin into Backstage run the following command from your Backstage root directory.
+To install the PagerDuty plugin into Backstage run the following commands from your Backstage root directory.
 
 ```bash
-yarn add --cwd packages/app @pagerduty/backstage-plugin # (1)! 
-yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend # (2)! 
+yarn add --cwd packages/app @pagerduty/backstage-plugin @pagerduty/backstage-plugin-common # (1)! 
 ```
 
-1. This command adds `@pagerduty/backstage-plugin` package to the `packages/app` folder because it is a frontend plugin.
-2. This command adds `@pagerduty/backstage-plugin-backend` package to the `packages/backend` folder because it is a backend plugin.
+1. This command adds `@pagerduty/backstage-plugin` and `@pagerduty/backstage-plugin-common` packages to the `packages/app` folder because it is a frontend plugin.
+
+```bash
+yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common # (1)! 
+```
+
+1. This command adds `@pagerduty/backstage-plugin-backend` and `@pagerduty/backstage-plugin-common` packages to the `packages/backend` folder because it is a backend plugin.
 
 **That's it!** Now it's time to add the plugin to Backstage and your services.
 
@@ -95,21 +99,15 @@ The PagerDuty plugin requires access to PagerDuty APIs and so we need to configu
 
 This step requires you to use the API token you generated and stored safely in previous steps. If you haven't done so follow the steps in [Generate a General Access REST API Token](/getting-started/pagerduty/#generate-a-general-access-rest-api-token).
 
-In `app-config.yaml` file add the proxy configuration and set the API token:
+In `app-config.yaml` file add the following configuration and set the API token:
 
 ```yaml
-proxy:
-  ...
-  '/pagerduty':
-    target: https://api.pagerduty.com
-    headers:
-      Authorization: Token token=${PAGERDUTY_TOKEN}
+pagerDuty:
+  apiToken: ${PAGERDUTY_TOKEN}
 ```
 
-!!! note
-    Currently the plugin leverages Backstage proxy to call PagerDuty APIs.
-
-    **Disclaimer:** There is active work to deprecate and replace the proxy in future versions for added security.
+!!! warning
+    If you were using the plugin **before version 0.8.1** you need to configure a proxy configuration instead. That configuration is now deprecated so use this configuration instead.
 
 ## Add the backend plugin to your application
 
@@ -148,7 +146,7 @@ async function main() {
 
 ### Configure Backend plugin API credentials
 
-The PagerDuty backend plugin exposes local APIs that query PagerDuty APIs without going through the proxy. Therefore it requires access to the API Token used in the previous step.
+The PagerDuty backend plugin exposes local APIs that query PagerDuty APIs without going through the Backstage proxy. Therefore it requires access to the API Token used in the previous step.
 
 If you plan to use the backend plugin add the following to your `app-config.yaml` file.
 
@@ -157,8 +155,8 @@ pagerDuty:
   apiToken: ${PAGERDUTY_TOKEN}
 ```
 
-!!! note
-    In future releases this configuration will replace the current configuration on the Backstage proxy and therefore remove the duplicate configuration key.
+!!! warning
+    If you were using the plugin **before version 0.3.1** you need to configure a proxy configuration instead. That configuration is now deprecated so use this configuration instead.
 
 ## Test your configuration
 

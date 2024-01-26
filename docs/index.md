@@ -48,6 +48,7 @@ The scope for the plugin is quite limited at the time but we are working on brin
 
 - **Frontend plugin** ([bugs](https://github.com/PagerDuty/backstage-plugin/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=)) ([feature requests](https://github.com/PagerDuty/backstage-plugin/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=))
 - **Backend plugin** ([bugs](https://github.com/PagerDuty/backstage-plugin-backend/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=)) ([feature requests](https://github.com/PagerDuty/backstage-plugin-backend/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=))
+- **Common library** ([bugs](https://github.com/PagerDuty/backstage-plugin-common/issues/new?assignees=&labels=bug&projects=&template=bug_report.md&title=)) ([feature requests](https://github.com/PagerDuty/backstage-plugin-common/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.md&title=))
 
 ## Roadmap
 

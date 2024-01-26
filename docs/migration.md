@@ -13,7 +13,7 @@ If you are migrating from the PagerDuty plugin that was maintained by Backstage,
 
     ```bash
     # From your Backstage root directory
-    yarn add --cwd packages/app @pagerduty/backstage-plugin
+    yarn add --cwd packages/app @pagerduty/backstage-plugin @pagerduty/backstage-plugin-common
     ```
 
 3. Replace all occurrences of `@backstage/plugin-pagerduty` with `@pagerduty/backstage-plugin` in your components

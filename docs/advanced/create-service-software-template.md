@@ -9,10 +9,10 @@ By doing so, it enables and configures the PagerDuty Card provided by the fronte
 This step is already covered on the `Getting Started` section of the documentation but if you haven't installed the package do it by running the following command from the root folder of your Backstage project.
 
 ```bash
-yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend # (1)! 
+yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common # (1)! 
 ```
 
-1. This command adds `@pagerduty/backstage-plugin-backend` package to the `packages/backend` folder because it is a backend plugin.
+1. This command adds `@pagerduty/backstage-plugin-backend` and `@pagerduty/backstage-plugin-common` packages to the `packages/backend` folder because it is a backend plugin.
 
 ## Adding the custom action to a Software Template
 

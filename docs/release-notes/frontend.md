@@ -1,5 +1,22 @@
 # Release notes for Frontend plugin
 
+## > 0.8.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.8.1)
+
+### Summary
+
+This minor release moves the direct REST API calls from the frontend component to the backend. Instead of leveraging the Backstage proxy to make direct API calls to PagerDuty the calls are made to the backend plugin instead.
+
+This removes the dependency on the proxy and prevents other plugins from using the PagerDuty proxy configuration to call PagerDuty APIs directly for other purposes which raises few security concerns.
+
+Therefore the proxy configuration for PagerDuty on app-config.yaml is no longer required and is in-fact deprecated.
+
+### Changes
+
+- feat: migrate api calls
+- chore(deps): bump follow-redirects from 1.15.3 to 1.15.4
+
 ## > 0.7.4
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.7.4)

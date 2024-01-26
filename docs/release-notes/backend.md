@@ -1,5 +1,32 @@
 # Release notes for Backend plugin
 
+## > 0.3.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.3.1)
+
+## Summary
+
+This release was aimed at removing the dependency on the Backstage proxy. We have replace it with new REST API endpoints for all operations executed from the frontend plugin that currently interact with the PagerDuty REST API directly. With this change we:
+
+- Removed the dependency on the Backstage proxy
+- Improved security by limiting the actions performed on the backend API
+- Slightly increase the performance by limiting the data used by the frontend to the essential
+
+**Endpoints added:**
+
+- **/oncall-users** - returns PagerDutyOnCallUsersResponse with list of users oncall
+- **/services** - uses integration_key and returns PagerDutyServiceResponse with PagerDuty service information
+- **/services/:serviceId** - returns PagerDutyServiceResponse with PagerDuty service information
+- **/services/:serviceId/change-events** - returns PagerDutyChangeEventsResponse with list of last 5 change events for the defined service
+- **/services/:serviceId/incidents** - returns PagerDutyIncidentsResponse with list of incidents for the defined service
+
+With this change, the proxy configuration on `app-config.yaml` is no longer required.
+
+### Changes
+
+- feat: migrate apis to backend
+- build(deps): Bump follow-redirects from 1.15.3 to 1.15.4
+
 ## > 0.2.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.2.1)
