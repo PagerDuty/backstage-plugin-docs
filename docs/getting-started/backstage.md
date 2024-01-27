@@ -141,7 +141,7 @@ async function main() {
   // ...
   const pagerdutyEnv = useHotMemoize(module, () => createEnv('pagerduty'));
   // ...
-  apiRouter.use('/pagerduty', await todo(pagerdutyEnv));
+  apiRouter.use('/pagerduty', await pagerduty(pagerdutyEnv));
 ```
 
 ### Configure Backend plugin API credentials
