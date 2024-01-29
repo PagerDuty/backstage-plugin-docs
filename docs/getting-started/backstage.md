@@ -148,7 +148,7 @@ async function main() {
 
 The PagerDuty backend plugin exposes local APIs that query PagerDuty APIs without going through the Backstage proxy. Therefore it requires access to the API Token used in the previous step.
 
-If you plan to use the backend plugin add the following to your `app-config.yaml` file.
+If you haven't done it previously, add the following to your `app-config.yaml` file.
 
 ```yaml
 pagerDuty:
