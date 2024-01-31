@@ -1,5 +1,27 @@
 # Release notes for Backend plugin
 
+## > 0.3.3
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.3.3)
+
+### Summary
+
+This release refactors HTTP error handling in REST API endpoints for backend routes. The new payload expected when an HTTP error is captured looks like the following.
+
+```json
+{
+    "errors": [
+        "Failed to get change events for service. Caller is not authorized to view the requested resource."
+    ]
+}
+```
+
+This helps in providing a better user experience to the user from a frontend perspective.
+
+### Changes
+
+- refactor: improve http error handling in REST API endpoints
+
 ## > 0.3.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.3.2)

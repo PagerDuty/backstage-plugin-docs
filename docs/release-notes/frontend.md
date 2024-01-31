@@ -1,5 +1,23 @@
 # Release notes for Frontend plugin
 
+## > 0.8.3
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.8.3)
+
+### Summary
+
+Version 0.8.3 fixes an issue that was causing an error message to show on-screen for user accounts that don't have AIOPs or Event Intelligence capabilities.
+
+![error-when-aiops-missing](/images/releases/083-error-when-aiops-missing.png)
+
+With this changes instead of getting an out-of-context error message users will see this image and message instead.
+
+![new-error-when-aiops-missing](/images/releases/083-new-error-when-aiops-missing.png)
+
+### Changes
+
+- refactor: improve error handling on client side for change events
+
 ## > 0.8.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.8.2)
