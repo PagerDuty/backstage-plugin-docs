@@ -52,6 +52,11 @@ The PagerDuty backend plugin exposes a custom action that can be used in project
 
 Follow [these steps](../advanced/create-service-software-template) to add the custom action to a template.
 
+!!! warning
+    **Alert Grouping** requires certain capabilities available in AIOps and Event Intelligence which are present in certain licensing models only.
+
+    If your account doesn't have these capabilities, alert grouping will sillently be ignored. 
+
 ## The future
 
 We are actively working on new capabilities based on user feedback and requests. If you have ideas or bugs to report we appreciate that you use the project's [Issues](https://github.com/PagerDuty/backstage-plugin/issues) page and let us know.
