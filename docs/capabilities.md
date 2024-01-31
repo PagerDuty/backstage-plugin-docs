@@ -20,6 +20,11 @@ See all recent changes sent to PagerDuty through integrations like GitHub, GitLa
 
 ![view-recent-changes](images/view-recent-changes.png)
 
+!!! Note
+    This feature is available with our [PagerDuty AIOps add-on](https://support.pagerduty.com/docs/aiops). If your account does not have support for *change events* you might see the following screen instead of a list of changes.
+
+    ![change-events-forbidden](images/change-events-forbidden.png)
+
 ### See and contact on call staff
 
 Quickly check who is on call for your service and reach out if necessary. The plugin allows you to email the on call person directly or open the user profile in PagerDuty.
