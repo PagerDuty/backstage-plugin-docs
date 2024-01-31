@@ -1,5 +1,21 @@
 # Release notes for Frontend plugin
 
+## > 0.8.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.8.2)
+
+### Summary
+
+Version 0.8.2 bumps the version of `@pagerduty/backstage-plugin-common` to version 0.0.2.
+
+Version 0.0.1 had a misconfiguration that was forcing the backend plugin to load it as an *ES6 module* and while that's supported for the frontend it is not yet fully supported for backend plugins.
+
+This dependency upgrade syncs the version of the common package between frontend and backend plugins.
+
+### Changes
+
+- chore(deps): bumping up common package version to latest
+
 ## > 0.8.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.8.1)

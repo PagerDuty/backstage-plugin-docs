@@ -1,10 +1,22 @@
 # Release notes for Backend plugin
 
+## > 0.3.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.3.2)
+
+### Summary
+
+This release bumps up the version of `@pagerduty/backstage-plugin-common` package to version 0.0.2 to solve an issue that was preventing the backend plugin to start.
+
+### Changes
+
+- chore(deps): upgrade common package version to fix issue preventing backend from starting
+
 ## > 0.3.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.3.1)
 
-## Summary
+### Summary
 
 This release was aimed at removing the dependency on the Backstage proxy. We have replace it with new REST API endpoints for all operations executed from the frontend plugin that currently interact with the PagerDuty REST API directly. With this change we:
 
@@ -31,7 +43,7 @@ With this change, the proxy configuration on `app-config.yaml` is no longer requ
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.2.1)
 
-## Summary
+### Summary
 
 This release introduces the capacity to **enable noise reduction through alert grouping and auto pause of notifications**.
 
@@ -51,7 +63,7 @@ Auto pause of notifications will also be enabled by default.
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.2.0)
 
-## Summary
+### Summary
 
 This new release introduces local APIs that will support the transition from using the Backstage proxy to call PagerDuty APIs and instead use the local APIs provide by the backend plugin. This will allowed the backend to control which data is exposed to Backstage, replacing the current mechanism that exposes all data returned by PagerDuty APIs.
 
@@ -67,7 +79,7 @@ This release only exposes an API route to get all escalation policies which will
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.1.2)
 
-## Summary
+### Summary
 
 This release introduces a scaffolder custom action that allows users to create a PagerDuty service from a Software Template and configure the frontend plugin in one single step. Go [here](https://pagerduty.github.io/backstage-plugin-docs/advanced/create-service-software-template/) to see how to do it.
 
