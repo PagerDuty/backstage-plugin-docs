@@ -14,6 +14,54 @@ yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/b
 
 1. This command adds `@pagerduty/backstage-plugin-backend` and `@pagerduty/backstage-plugin-common` packages to the `packages/backend` folder because it is a backend plugin.
 
+## Adding the custom action to the project
+
+Backstage Scaffolder capabilities can be extended with custom actions that support Software Templates. For that to happen you need to update `packages/backend/src/plugins/scaffolder.ts` and add custom actions.
+
+Now, the list of scaffolder actions cannot be appended so you need re-create it and append your custom action. Otherwise all actions will be replaced just with yours.
+
+```typescript
+// Add imports
+import { createBuiltinActions } from '@backstage/plugin-scaffolder-backend';
+import { ScmIntegrations } from '@backstage/integration';
+import { createPagerDutyServiceAction } from '@pagerduty/backstage-plugin-backend';
+
+export default async function createPlugin(
+  env: PluginEnvironment,
+): Promise<Router> {
+
+  ...
+
+  // Pull integrations
+  const integrations = ScmIntegrations.fromConfig(env.config);
+
+  // Rebuild built-in actions
+  const builtInActions = createBuiltinActions({
+    integrations,
+    catalogClient,
+    config: env.config,
+    reader: env.reader,
+  });
+
+  // Append PagerDuty custom action to the list
+  const actions = [...builtInActions, createPagerDutyServiceAction()];
+
+  // Add new action list to the scaffolder
+  return await createRouter({
+    actions,                // this is the only update needed on this list
+    logger: env.logger,
+    config: env.config,
+    database: env.database,
+    reader: env.reader,
+    catalogClient,
+    identity: env.identity,
+    permissions: env.permissions,
+  });
+}
+```
+
+This step registers the custom action with the Scaffolder and allows it to be used in the Software template which you will configure on next step.
+
 ## Adding the custom action to a Software Template
 
 Software Templates can be simple or complex depending on the practices you are trying to standardize across your teams. Here, we provide a simple example of a template that requests basic information for a Backstage service and augments that with information relevant for creating the service in PagerDuty.
