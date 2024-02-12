@@ -1,5 +1,32 @@
 # Release notes for Backend plugin
 
+## > 0.4.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.0)
+
+### Summary
+
+Release **0.4.0** introduces a minor change that adds a new option configuration field `oauth`. This new configuration improves security when calling PagerDuty REST APIs by replacing the current `apiToken` configuration that assigns full-access privileges to Backstage. 
+
+With **Scoped OAuth** support the PagerDuty admin can grant only the necessary permissions to Backstage instead of access to all APIs and operations.
+
+The new configuration can be defined in `app-config.yaml` with the following parameters:
+
+```yaml
+pagerDuty:
+  oauth:
+    clientId: ${PD_CLIENT_ID}
+    clientSecret: ${PD_CLIENT_SECRET}
+    subDomain: ${PD_ACCOUNT_SUBDOMAIN}
+    region: ${PD_ACCOUNT_REGION}           // Optional. allowed values: 'us', 'eu'. Defaults to 'us'.
+```
+
+### Changes
+
+- feat: add OAuth support
+- build(deps): Bump @backstage/backend-app-api from 0.5.8 to 0.5.10
+- docs: updated readme with new features - REST APIs
+
 ## > 0.3.3
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.3.3)

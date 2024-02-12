@@ -1,5 +1,29 @@
 # Release notes for Frontend plugin
 
+## > 0.9.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.9.0)
+
+### Summary
+
+This release adds the type necessary for OAuth support in Backstage plugin configuration. Users can now configure the following OAuth parameters in Backstage `app-config.yaml` file.
+
+```yaml
+pagerDuty:
+  oauth:
+    clientId: ${PD_CLIENT_ID}
+    clientSecret: ${PD_CLIENT_SECRET}
+    subDomain: ${PD_ACCOUNT_SUBDOMAIN}
+    region: ${PD_ACCOUNT_REGION}           // Optional. allowed values: 'us', 'eu'. Defaults to 'us'.
+```
+
+It also introduces more friendly error messages when permissions for certain APIs or operations are not present. This was implemented not to break the PagerDuty Card experience.
+
+### Changes
+
+- feat: add suport for Scope OAuth
+- fix: update error links to PagerDuty docs
+
 ## > 0.8.3
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.8.3)

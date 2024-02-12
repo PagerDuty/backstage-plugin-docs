@@ -1,7 +1,7 @@
 # Configuring Backstage
 
 !!! note
-    To setup the PagerDuty plugin on Backstage you need to have an API Key and an Integration Key generated both for your account and service. If you don't have this information already you must follow the steps described in the [PagerDuty integration](/getting-started/pagerduty) section.
+    To setup the PagerDuty plugin on Backstage you need to have an API Key - or client id and client secret for OAuth to generate an access token - and an Integration Key generated both for your account and service. If you don't have this information already you must follow the steps described in the [PagerDuty integration](/getting-started/pagerduty) section.
 
 ## Installing the plugin
 
@@ -93,22 +93,6 @@ annotations:
 
       1. The service id can be found by navigating to a Service with PagerDuty console and pulling the ID value out of the URL (e.g. https://[YOUR-ACCOUNT].pagerduty.com/service-directory/[SERVICE-ID]).
 
-### Configure API Authorization
-
-The PagerDuty plugin requires access to PagerDuty APIs and so we need to configure our Backstage app with the necessary credentials to reach the APIs.
-
-This step requires you to use the API token you generated and stored safely in previous steps. If you haven't done so follow the steps in [Generate a General Access REST API Token](/getting-started/pagerduty/#generate-a-general-access-rest-api-token).
-
-In `app-config.yaml` file add the following configuration and set the API token:
-
-```yaml
-pagerDuty:
-  apiToken: ${PAGERDUTY_TOKEN}
-```
-
-!!! warning
-    If you were using the plugin **before version 0.8.1** you need to configure a proxy configuration instead. That configuration is now deprecated so use this configuration instead.
-
 ## Add the backend plugin to your application
 
 If you followed the steps in *"Installing the plugin"*, the backend plugin for PagerDuty is now added to your application but in order for it to expose its capabilities to the frontend plugin you need to configure it.
@@ -144,26 +128,51 @@ async function main() {
   apiRouter.use('/pagerduty', await pagerduty(pagerdutyEnv));
 ```
 
-### Configure Backend plugin API credentials
+## Configure API Authorization
 
-The PagerDuty backend plugin exposes local APIs that query PagerDuty APIs without going through the Backstage proxy. Therefore it requires access to the API Token used in the previous step.
+The PagerDuty plugin requires access to PagerDuty APIs and so we need to configure our Backstage app with the necessary credentials to reach the APIs. This step requires you to use an access token - for OAuth - or an API token. 
 
-If you haven't done it previously, add the following to your `app-config.yaml` file.
+!!! note
+    If you followed previous steps you should have this information already but if you haven't done so follow the steps in [Register an App](/getting-started/pagerduty/#register-an-application-for-scoped-oauth-recommended) to get the *client id* and *client secret* for OAuth authorization or [Generate a General Access REST API Token](/getting-started/pagerduty/#generate-a-general-access-rest-api-token) to generate a REST API Token.
+
+### Scoped OAuth (recommended)
+
+In `app-config.yaml` file add the following configuration and set your OAuth configuration:
 
 ```yaml
 pagerDuty:
-  apiToken: ${PAGERDUTY_TOKEN}
+  oauth:
+    clientId: ${PD_CLIENT_ID}
+    clientSecret: ${PD_CLIENT_SECRET}
+    subDomain: ${PD_ACCOUNT_SUBDOMAIN}
+    region: ${PD_ACCOUNT_REGION}  // Optional. allowed values: 'us', 'eu'. 
+                                  // Defaults to 'us'.
+```
+
+In `app-config.yaml` file add the following configuration to set your REST API Token:
+
+```yaml
+pagerDuty:
+  apiToken: ${PAGERDUTY_TOKEN}  
 ```
 
 !!! warning
-    If you were using the plugin **before version 0.3.1** you need to configure a proxy configuration instead. That configuration is now deprecated so use this configuration instead.
+    If you were using the plugin **before version 0.8.1** of the frontend or **version 0.3.1** of the backend you need to configure a proxy configuration instead. That configuration is now deprecated so use this configuration instead.
 
 ## Test your configuration
 
-Start your Backstage app, passing the PagerDuty API token as an environment variable:
+Start your Backstage app, passing the PagerDuty API token or OAuth parameters as a environment variables.
+
+### For Scoped OAuth
+
+```bash
+PD_CLIENT_ID='<ID>' PD_CLIENT_SECRET='<SECRET>' PD_ACCOUNT_SUBDOMAIN='<SUBDOMAIN>' PD_ACCOUNT_REGION='<REGION>'  yarn dev
+```
+
+### For REST API Token
 
 ```bash
 PAGERDUTY_TOKEN='<TOKEN>' yarn dev
 ```
 
-This will proxy the request by adding an `Authorization` header with the provided token.
+This will add an `Authorization` header to all the requests made to PagerDuty REST APIS.

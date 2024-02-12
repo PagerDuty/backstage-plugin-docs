@@ -1,5 +1,26 @@
 # Release notes for Frontend plugin
 
+## > 0.1.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.1.0)
+
+### Summary
+
+Release **0.1.0** adds the type necessary for OAuth support in Backstage plugin configuration. With this new type users will be able to configure the following OAuth parameters in Backstage `app-config.yaml` file.
+
+```yaml
+pagerDuty:
+  oauth:
+    clientId: ${PD_CLIENT_ID}
+    clientSecret: ${PD_CLIENT_SECRET}
+    subDomain: ${PD_ACCOUNT_SUBDOMAIN}
+    region: ${PD_ACCOUNT_REGION}           // Optional. allowed values: 'us', 'eu'. Defaults to 'us'.
+```
+
+### Changes
+
+- feat: adds type to allow OAuth support
+
 ## > 0.0.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.0.2)
