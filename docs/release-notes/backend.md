@@ -1,5 +1,21 @@
 # Release notes for Backend plugin
 
+## > 0.4.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.1)
+
+### Summary
+
+This release changes the start behaviour for the backend plugin. The former behaviour was to prevent the plugin from starting when credentials were missing. This is not the behaviour for most plugins and therefore this release makes that change to comply with existing behaviour.
+
+Release **0.4.1** allows the plugin to start if credentials are missing, logs an error to simplify troubleshooting and shows an error message in the PagerDuty Card.
+
+<img width="1245" alt="image" src="https://github.com/PagerDuty/backstage-plugin-backend/assets/2689939/5893560a-2988-4e9d-ac2a-75e9a7b26d57">
+
+## Changes
+
+- refactor: change start behaviour on missing credentials
+
 ## > 0.4.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.0)
