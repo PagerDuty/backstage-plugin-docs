@@ -24,9 +24,9 @@ If you are migrating from the PagerDuty plugin that was maintained by Backstage 
     yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common
     ```
 
-5. [Add the backend plugin](/getting-started/backstage/#add-the-backend-plugin-to-your-application) to your Backstage project
+5. [Add the backend plugin](/backstage-plugin-docs/getting-started/backstage/#add-the-backend-plugin-to-your-application) to your Backstage project
 
-6. [Configure API credentials](/getting-started/backstage/#configure-backend-plugin-api-credentials) to make requests to PagerDuty REST API
+6. [Configure API credentials](/backstage-plugin-docs/getting-started/backstage/#configure-backend-plugin-api-credentials) to make requests to PagerDuty REST API
 
 7. Remove PagerDuty proxy configuration from you `app-config.yaml` file
 
@@ -34,5 +34,5 @@ If you are migrating from the PagerDuty plugin that was maintained by Backstage 
 
     ```bash
     # From your Backstage root directory
-    yarn install && yarn dev 
+    yarn install && yarn dev
     ```
