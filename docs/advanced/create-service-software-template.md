@@ -9,7 +9,7 @@ By doing so, it enables and configures the PagerDuty Card provided by the fronte
 This step is already covered on the `Getting Started` section of the documentation but if you haven't installed the package do it by running the following command from the root folder of your Backstage project.
 
 ```bash
-yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common # (1)! 
+yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common # (1)!
 ```
 
 1. This command adds `@pagerduty/backstage-plugin-backend` and `@pagerduty/backstage-plugin-common` packages to the `packages/backend` folder because it is a backend plugin.
@@ -109,7 +109,7 @@ Once all the information is provided by the user we will:
 4. register the component in Backstage
 
 !!! note
-    For the following template to work, you need to configure the `apiToken` in `app-config.yaml` file. If you haven't done so, follow the steps in [Configure Backend plugin API credentials](/getting-started/backstage/#optional-configure-backend-plugin-api-credentials)
+    For the following template to work, you need to configure the `apiToken` in `app-config.yaml` file. If you haven't done so, follow the steps in [Configure Backend plugin API credentials](/backstage-plugin-docs/getting-started/backstage/#optional-configure-backend-plugin-api-credentials)
 
     **Note:** If you don't setup this property in your configuration, the backend plugin will fail to start.
 
@@ -208,7 +208,7 @@ spec:
         description: ${{ parameters.description }}
         escalationPolicyId: ${{ parameters.escalation_policy_id }}
         alertGrouping: ${{ parameters.alert_grouping }} #(5)!
-    
+
     - id: fetch-base
       name: Fetch Base
       action: fetch:template
@@ -219,7 +219,7 @@ spec:
           name: ${{ parameters.service_name }}
           serviceId: ${{ steps['pagerdutyService'].output.serviceId }}
           integrationKey: ${{ steps['pagerdutyService'].output.integrationKey }}
-    
+
     - id: publish
       name: Publish
       action: publish:github
@@ -227,14 +227,14 @@ spec:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.repoUrl }}
-    
+
     - id: register
       name: Register
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info'
-    
+
   output:
     links:
       - title: Open in PagerDuty
