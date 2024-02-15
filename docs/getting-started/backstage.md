@@ -1,7 +1,7 @@
 # Configuring Backstage
 
 !!! note
-    To setup the PagerDuty plugin on Backstage you need to have an API Key - or client id and client secret for OAuth to generate an access token - and an Integration Key generated both for your account and service. If you don't have this information already you must follow the steps described in the [PagerDuty integration](/getting-started/pagerduty) section.
+    To setup the PagerDuty plugin on Backstage you need to have an API Key - or client id and client secret for OAuth to generate an access token - and an Integration Key generated both for your account and service. If you don't have this information already you must follow the steps described in the [PagerDuty integration](/backstage-plugin-docs/getting-started/pagerduty) section.
 
 ## Installing the plugin
 
@@ -11,13 +11,13 @@
 To install the PagerDuty plugin into Backstage run the following commands from your Backstage root directory.
 
 ```bash
-yarn add --cwd packages/app @pagerduty/backstage-plugin @pagerduty/backstage-plugin-common # (1)! 
+yarn add --cwd packages/app @pagerduty/backstage-plugin @pagerduty/backstage-plugin-common # (1)!
 ```
 
 1. This command adds `@pagerduty/backstage-plugin` and `@pagerduty/backstage-plugin-common` packages to the `packages/app` folder because it is a frontend plugin.
 
 ```bash
-yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common # (1)! 
+yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common # (1)!
 ```
 
 1. This command adds `@pagerduty/backstage-plugin-backend` and `@pagerduty/backstage-plugin-common` packages to the `packages/backend` folder because it is a backend plugin.
@@ -31,9 +31,9 @@ The frontend plugin needs to be added to your application and currently that req
 Add the following imports to the top of the file:
 
 ```Typescript
-import { 
-    isPluginApplicableToEntity as isPagerDutyAvailable, 
-    EntityPagerDutyCard, 
+import {
+    isPluginApplicableToEntity as isPagerDutyAvailable,
+    EntityPagerDutyCard,
 } from '@pagerduty/backstage-plugin';
 ```
 
@@ -81,7 +81,7 @@ annotations:
   pagerduty.com/integration-key: [INTEGRATION-KEY] #(1)!
 ```
 
-1. The integration key is generated per service and is obtained on the service integrations page on the PagerDuty console. If you don't have one, follow the steps at [Create a service integration for Backstage](/getting-started/pagerduty/#create-a-service-integration-for-backstage).
+1. The integration key is generated per service and is obtained on the service integrations page on the PagerDuty console. If you don't have one, follow the steps at [Create a service integration for Backstage](/backstage-plugin-docs/getting-started/pagerduty/#create-a-service-integration-for-backstage).
 
 !!! note
     You can optionally decide to annotate with a **service id** instead but you **won't be able to create incidents** from Backstage if you do so.
@@ -114,7 +114,7 @@ export default async function createPlugin(
 }
 ```
 
-This creates the backend plugin that you can now configure in your application. 
+This creates the backend plugin that you can now configure in your application.
 
 In `packages/backend/src/index.ts` import your plugin and add a route for the APIs exposed by PagerDuty's backend plugin.
 
@@ -130,10 +130,10 @@ async function main() {
 
 ## Configure API Authorization
 
-The PagerDuty plugin requires access to PagerDuty APIs and so we need to configure our Backstage app with the necessary credentials to reach the APIs. This step requires you to use an access token - for OAuth - or an API token. 
+The PagerDuty plugin requires access to PagerDuty APIs and so we need to configure our Backstage app with the necessary credentials to reach the APIs. This step requires you to use an access token - for OAuth - or an API token.
 
 !!! note
-    If you followed previous steps you should have this information already but if you haven't done so follow the steps in [Register an App](/getting-started/pagerduty/#register-an-application-for-scoped-oauth-recommended) to get the *client id* and *client secret* for OAuth authorization or [Generate a General Access REST API Token](/getting-started/pagerduty/#generate-a-general-access-rest-api-token) to generate a REST API Token.
+    If you followed previous steps you should have this information already but if you haven't done so follow the steps in [Register an App](/backstage-plugin-docs/getting-started/pagerduty/#register-an-application-for-scoped-oauth-recommended) to get the *client id* and *client secret* for OAuth authorization or [Generate a General Access REST API Token](/backstage-plugin-docs/getting-started/pagerduty/#generate-a-general-access-rest-api-token) to generate a REST API Token.
 
 ### Scoped OAuth (recommended)
 
@@ -145,7 +145,7 @@ pagerDuty:
     clientId: ${PD_CLIENT_ID}
     clientSecret: ${PD_CLIENT_SECRET}
     subDomain: ${PD_ACCOUNT_SUBDOMAIN}
-    region: ${PD_ACCOUNT_REGION}  // Optional. allowed values: 'us', 'eu'. 
+    region: ${PD_ACCOUNT_REGION}  // Optional. allowed values: 'us', 'eu'.
                                   // Defaults to 'us'.
 ```
 
@@ -153,7 +153,7 @@ In `app-config.yaml` file add the following configuration to set your REST API T
 
 ```yaml
 pagerDuty:
-  apiToken: ${PAGERDUTY_TOKEN}  
+  apiToken: ${PAGERDUTY_TOKEN}
 ```
 
 !!! warning

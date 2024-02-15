@@ -33,7 +33,7 @@ Creating a service integration in PagerDuty is the default mechanism to connect 
         On this screen you can update the integration name to something that allows you to easily identify the Backstage instance you are connecting to.
 
 2. **If you are creating a new service for your integration:** Follow the instructions in the documentation that shows how to [create a service](https://support.pagerduty.com/docs/services-and-integrations#create-a-service) and select **Backstage** as the **Integration Type** in step 5.
-3. **If you want to automate service creation with Software Template:** Follow the steps in [Create PagerDuty service with Software Templates](/advanced/create-service-software-template).
+3. **If you want to automate service creation with Software Template:** Follow the steps in [Create PagerDuty service with Software Templates](/backstage-plugin-docs/advanced/create-service-software-template).
 
 Once you complete this step you will be able to configure your services in Backstage to create incidents in PagerDuty by using the **Events API**.
 
@@ -76,13 +76,13 @@ In order to use **Scoped OAuth** you need to register an App in PagerDuty. Follo
         users.read
         vendors.read // used in scaffolder only
     ```
-    
+
     !!! warning
         You don't have to assign all the above permissions to your application but not doing so might prevent the plugin from running as expected and you might see some errors on the PagerDuty card.
 
 9. Copy the **Client ID** and **Client Secret** and store them somewhere safe. We will use them later when configuring Backstage.
 
-If you were successful in following the above steps you are ready to move to the [Backstage configuration](/getting-started/backstage).
+If you were successful in following the above steps you are ready to move to the [Backstage configuration](/backstage-plugin-docs/getting-started/backstage).
 
 #### Generate a General Access REST API Token
 
@@ -106,4 +106,4 @@ To create an API Key to use with Backstage you:
 5. Click **Create Key**
 6. **Copy the key** and **store it** somewhere safe as we will need it later
 
-If you were successful in following the above steps you are ready to move to the [Backstage configuration](/getting-started/backstage).
+If you were successful in following the above steps you are ready to move to the [Backstage configuration](/backstage-plugin-docs/getting-started/backstage).

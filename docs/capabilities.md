@@ -38,7 +38,7 @@ The PagerDuty plugin allows users to create incidents directly from Backstage. Y
 ![trigger-incident](images/trigger-incident.png)
 
 !!! note
-    This feature can be disabled if you don't want users to create incidents manually from Backstage. To do so check the steps on how to [enable read-only mode](/advanced/enable-read-only-mode/).
+    This feature can be disabled if you don't want users to create incidents manually from Backstage. To do so check the steps on how to [enable read-only mode](/backstage-plugin-docs/advanced/enable-read-only-mode/).
 
 ## Backend
 
@@ -55,7 +55,7 @@ Follow [these steps](../advanced/create-service-software-template) to add the cu
 !!! warning
     **Alert Grouping** requires certain capabilities available in AIOps and Event Intelligence which are present in certain licensing models only.
 
-    If your account doesn't have these capabilities, alert grouping will sillently be ignored. 
+    If your account doesn't have these capabilities, alert grouping will sillently be ignored.
 
 ## The future
 
