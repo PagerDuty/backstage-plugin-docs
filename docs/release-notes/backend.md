@@ -1,5 +1,17 @@
 # Release notes for Backend plugin
 
+## > 0.4.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.2)
+
+### Summary
+
+This release introduces a security patch to a third-party dependency.
+
+## Changes
+
+- build(deps): Bump ip from 2.0.0 to 2.0.1 (#29) by @dependabot
+
 ## > 0.4.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.1)

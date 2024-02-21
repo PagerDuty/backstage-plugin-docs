@@ -1,5 +1,17 @@
 # Release notes for Frontend plugin
 
+## > 0.9.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.9.1)
+
+### Summary
+
+This release introduces a security patch to a third-party dependency.
+
+## Changes
+
+- build(deps): Bump ip from 2.0.0 to 2.0.1 (#29) by @dependabot
+
 ## > 0.9.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.9.0)
