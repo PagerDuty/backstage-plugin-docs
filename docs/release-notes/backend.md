@@ -8,7 +8,7 @@
 
 This release introduces a security patch to a third-party dependency.
 
-## Changes
+### Changes
 
 - build(deps): Bump ip from 2.0.0 to 2.0.1 (#29) by @dependabot
 
@@ -24,7 +24,7 @@ Release **0.4.1** allows the plugin to start if credentials are missing, logs an
 
 <img width="1245" alt="image" src="https://github.com/PagerDuty/backstage-plugin-backend/assets/2689939/5893560a-2988-4e9d-ac2a-75e9a7b26d57">
 
-## Changes
+### Changes
 
 - refactor: change start behaviour on missing credentials
 
