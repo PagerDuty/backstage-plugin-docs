@@ -71,6 +71,7 @@ nav:
     - Configuring Backstage: getting-started/backstage.md
   - Capabilities: capabilities.md
   - Advanced:
+    - Configure REST API url: advanced/configure-api-url.md
     - Configure Events url: advanced/configure-events-url.md
     - Enable read-only mode: advanced/enable-read-only-mode.md
     - Create an homepage component: advanced/homepage-component.md

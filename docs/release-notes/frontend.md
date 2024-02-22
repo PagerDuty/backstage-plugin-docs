@@ -1,5 +1,26 @@
 # Release notes for Frontend plugin
 
+## > 0.9.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.9.2)
+
+### Summary
+
+This release resolves an issue reported in backstage-plugin (#74) which prevents users from overriding the REST API base url (e.g. for EU based accounts). This feature was possible through the Backstage proxy configuration.
+
+With this, users will be able to add a new configuration to the PagerDuty plugin in `app-config.yaml` like the example below.
+
+```yaml
+pagerDuty:
+  apiBaseUrl: https://api.eu.pagerduty.com     #defaults to https://api.pagerduty.com
+```
+
+This feature in mainly implemented in `@pagerduty/backstage-plugin-backend` but this release updates the plugin config schema accordingly.
+
+### Changes
+
+- fix: updating config schema to allow overriding of api base url
+
 ## > 0.9.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.9.1)
@@ -10,7 +31,7 @@ This release introduces a security patch to a third-party dependency.
 
 ### Changes
 
-- build(deps): Bump ip from 2.0.0 to 2.0.1 (#29) by @dependabot
+- build(deps): Bump ip from 2.0.0 to 2.0.1
 
 ## > 0.9.0
 
