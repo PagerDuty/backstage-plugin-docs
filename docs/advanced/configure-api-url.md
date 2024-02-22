@@ -10,5 +10,5 @@ pagerDuty:
 !!! note
     **PagerDuty accounts based in Europe use a different URL** so you need to override it here if that is your case.
 
-    EU-based accounts: 'https://api.eu.pagerduty.com'
-    US-based accounts: 'https://api.pagerduty.com'
+    - EU-based accounts: 'https://api.eu.pagerduty.com'
+    - US-based accounts: 'https://api.pagerduty.com'
