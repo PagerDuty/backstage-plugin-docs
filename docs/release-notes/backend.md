@@ -1,5 +1,20 @@
 # Release notes for Backend plugin
 
+## > 0.4.4
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.4)
+
+### Summary
+
+This release fixes an issue on the on-call section that was retrieving an unordered list of on-call users instead of an ordered list.
+
+It also fixes a security issue on a backstage dependency (@backstage/backend-common).
+
+### Changes
+
+- build(deps): Bump @backstage/backend-common from 0.19.9 to 0.19.10
+- fix(oncall-api): return all users from lowest escalation level
+
 ## > 0.4.3
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.3)
