@@ -1,5 +1,19 @@
 # Release notes for Backend plugin
 
+## > 0.4.5
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.5)
+
+### Summary
+
+This release updates the `config.d.ts` values to mark `pagerDuty.apiToken` and `pagerDuty.oauth` as secret values.
+
+These are only used by the backend currently and should not be made visible to the frontend. See <https://backstage.io/docs/conf/defining/#visibility> for more details.
+
+### Changes
+
+- fix: ensure secret configuration values are secret
+
 ## > 0.4.4
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.4)

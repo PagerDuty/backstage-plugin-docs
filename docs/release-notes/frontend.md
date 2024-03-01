@@ -1,5 +1,15 @@
 # Release notes for Frontend plugin
 
+## > 0.9.3
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.9.3This release removes the `pagerDuty.apiToken` and `pagerDuty.oauth` configuration definitions from this repository as they should be treated as secret config and this frontend plugin does not need to know about them.
+
+These configurations will now be exclusive to the backend plugin.
+
+### Changes
+
+- fix: remove config definitions that are secret
+
 ## > 0.9.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.9.2)
