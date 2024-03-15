@@ -1,5 +1,22 @@
 # Release notes for Backend plugin
 
+## > 0.4.6
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.6)
+
+### Summary
+
+Release `0.4.6` replaces global `fetch` with `node-fetch` library as recommended by Backstage on [ADR013](https://backstage.io/docs/architecture-decisions/adrs-adr013).
+
+This standardizes on the HTTP package used by the backend plugin and solves issue [#37](https://github.com/PagerDuty/backstage-plugin-backend/issues/37) that prevents HTTP calls to succeed behind a proxy - used in many organizations. This introduces no changes to existing plugin users except for the ones experiencing the behaviour on [#37](https://github.com/PagerDuty/backstage-plugin-backend/issues/37).
+
+Also fixes a security vulnerability by bumping up version of `jose` from 4.15.4 to 4.15.5.
+
+### Changes
+
+- fix: replace fetch with node-fetch to comply with ADR013
+- build(deps): Bump jose from 4.15.4 to 4.15.5
+
 ## > 0.4.5
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.5)
