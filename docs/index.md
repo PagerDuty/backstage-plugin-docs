@@ -56,7 +56,7 @@ We are working on some cool new features and capabilities. Here are some of them
 
 - [x] Create scaffolder action to allow services to be created in PagerDuty
 - [x] Adding support for [Scoped OAuth](https://developer.pagerduty.com/docs/f59fdbd94ceab-o-auth-functionality)
-- [ ] Improving UI for the existing PagerDuty Card
+- [x] Improving UI for the existing PagerDuty Card
 - [ ] Adding support for adding multiple services on the same card
 - [ ] Adding support for a Team PagerDuty card
 

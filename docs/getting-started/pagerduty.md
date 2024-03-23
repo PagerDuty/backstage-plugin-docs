@@ -65,13 +65,14 @@ In order to use **Scoped OAuth** you need to register an App in PagerDuty. Follo
 
     ```typescript
         abilities.read // used in scaffolder only
-        change_events.read
+        analytics.read
         escalation_policies.read
         incidents.read
         oncalls.read
         schedules.read
         services.read
         services.write // used in scaffolder only
+        standards.read
         teams.read
         users.read
         vendors.read // used in scaffolder only

@@ -27,7 +27,7 @@ See all recent changes sent to PagerDuty through integrations like GitHub, GitLa
 
 ### See and contact on call staff
 
-Quickly check who is on call for your service and reach out if necessary. The plugin allows you to email the on call person directly or open the user profile in PagerDuty.
+Quickly check who is on call for your service and reach out if necessary. The plugin allows you to see the escalation policy that the on-call user is assigned to and navigate to PagerDuty for more details.
 
 ![view-oncall-engineers](images/view-oncall-engineers.png)
 

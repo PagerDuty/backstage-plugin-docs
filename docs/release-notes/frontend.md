@@ -1,5 +1,34 @@
 # Release notes for Frontend plugin
 
+## > 0.10.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.10.0)
+
+### Summary
+
+This release introduces a new UI to the PagerDutyCard that is used on each Entity Page. This new UI introduces:
+
+- official PagerDuty logo
+- clear visibility on incident status and urgency
+- service status
+- service standards
+- visibility on service metrics (total incidents, high urgency incidents, total number of interruptions)
+- escalation policy information on the on-call section
+
+This release also updates the behaviour of some components from the PagerDutyCard.
+
+- the button to contact the on-call user by email is now removed
+- the "create incident" button is now completely hidden in case of `read-only` mode, instead of just disabling the button.
+
+![0100-new-ui](../images/releases/0100-new-ui.png)
+
+**For Scoped OAuth users** 👉 This release requires you to add additional scopes to your App Registration in PagerDuty: `analytics.read` and `standards.read`.
+
+### Changes
+
+- chore(deps): bump follow-redirects from 1.15.4 to 1.15.6
+- style: refresh PagerDutyCard UI
+
 ## > 0.9.3
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.9.3)

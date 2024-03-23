@@ -1,5 +1,18 @@
 # Release notes for Frontend plugin
 
+## > 0.1.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.1.2)
+
+### Summary
+
+This release introduces new types to support the new PagerDutyCard UI that requires Service Standards, Service Status and Service Metrics.
+
+### Changes
+
+- chore(deps): Bump follow-redirects from 1.15.5 to 1.15.6
+- feat: add types to support updated UI
+
 ## > 0.1.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.1.1)
@@ -10,7 +23,7 @@ This release introduces a security patch to a third-party dependency.
 
 ### Changes
 
-- build(deps): Bump ip from 2.0.0 to 2.0.1 (#29) by @dependabot
+- build(deps): Bump ip from 2.0.0 to 2.0.1
 
 ## > 0.1.0
 

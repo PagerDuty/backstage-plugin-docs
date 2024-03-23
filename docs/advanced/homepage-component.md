@@ -2,6 +2,9 @@
 
 The most common use case for the plugin is to have an instance of the plugin in each service. Still, you might want to have multiple instances of the plugin in your homepage to provide visibility on multiple services at the same time.
 
+!!! warning
+    The `PagerDutyHomepageCard` has not yet been updated to match the new UI of the `PagerDutyCard` released on version `0.10.0` of the frontend plugin.
+
 If that is your case you might want to leverage the `PagerDutyHomepageCard` component like so.
 
 ```html

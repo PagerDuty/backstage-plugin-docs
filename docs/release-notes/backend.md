@@ -1,5 +1,30 @@
 # Release notes for Backend plugin
 
+## > 0.5.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.5.1)
+
+### Summary
+
+This release fixes a bug related to missing API scopes that was preventing the new capabilities introduce by the new UI (frontend 0.10.0).
+
+### Changes
+
+- fix: adds the required API scopes for the new UI
+
+## > 0.5.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.5.0)
+
+### Summary
+
+This release introduces new backend API endpoints to query **service standards** and **service metrics**. These features are used by the frontend component to provide additional information on the services.
+
+### Changes
+
+- feat: apis supporting new card UI
+- build(deps): Bump follow-redirects from 1.15.5 to 1.15.6
+
 ## > 0.4.6
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.4.6)
