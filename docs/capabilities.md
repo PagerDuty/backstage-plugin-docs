@@ -8,6 +8,19 @@ Currently the plugin provides a limited set of features that we view as the core
 
 The frontend plugin (`@pagerduty/backstage-plugin`) allows users to add a PagerDuty Card to their service pages which provides the following set of features.
 
+### Quick view on current service status
+
+The plugin provides an easy mechanism to check the current status for the service, as well as some insights for the last 30 days and how well you are complying to Service Standards.
+
+![service-insights](images/service-insights.png)
+
+!!! note
+    By hovering the mouse over the information button on Service Standards card you will see a list of all the Service Standards and whether you are compliant or not.
+
+    ![service-standards-list](images/service-standards-list.png)
+
+
+
 ### View any open incidents
 
 The plugin lists all open incidents on a specific service and allows you to navigate to the incident detail page in PagerDuty.
