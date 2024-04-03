@@ -68,6 +68,9 @@ const overviewContent = (
 
 Now the PagerDuty plugin will be displayed in all your components that include PagerDuty annotations.
 
+!!! note
+    The code samples provided above reflect the default configuration of the `PagerDutyCard` entity. You have at your disposal some parameters that allow you to [prevent users from creating incidents](/backstage-plugin-docs/advanced/enable-read-only-mode), or [hide the change events tab](/backstage-plugin-docs/advanced/hide-change-events) or even [hide the on-call](/backstage-plugin-docs/advanced/hide-oncall) section of the card.
+
 ## Configure the Frontend plugin
 
 The frontend plugin for PagerDuty is now added to your application but in order for it to show you need to configure your entities and the application itself.
@@ -84,7 +87,7 @@ annotations:
 1. The integration key is generated per service and is obtained on the service integrations page on the PagerDuty console. If you don't have one, follow the steps at [Create a service integration for Backstage](/backstage-plugin-docs/getting-started/pagerduty/#create-a-service-integration-for-backstage).
 
 !!! note
-    You can optionally decide to annotate with a **service id** instead but you **won't be able to create incidents** from Backstage if you do so.
+    You can optionally decide to annotate with a **service id** instead but you **won't be able to create incidents** from Backstage if you do so and the `Create Incident` button will not show on the PagerDuty card.
 
     ```yaml
     annotations:

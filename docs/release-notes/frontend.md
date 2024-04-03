@@ -1,5 +1,49 @@
 # Release notes for Frontend plugin
 
+## > 0.11.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.11.0)
+
+### Summary
+
+This release introduces a few minor changes and fixes that were part of our roadmap.
+
+- **Users are now able to hide the on-call section**
+We introduced a new parameter on the `PagerDutyCard` entity that allows users to completely hide the on-call information section. This feature was mentioned by a few customers and now it is available through an opt-in mechanism.
+
+    ```html
+    <EntitySwitch>
+      <EntitySwitch.Case if={isPagerDutyAvailable}>
+        <Grid item md={12}>
+          <EntityPagerDutyCard disableOnCall />
+        </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch>
+    ```
+
+- **Creating an incident is now hidden by default when `integration-key` is missing**
+Previously the button to create a new incident was disabled if the `integration-key` configuration was not defined. We have changed that behaviour to completely remove the button from the card as it was causing confusion according to some customers we interviewed.
+
+- **Added documentation on how to disable the change events tab**
+The `PagerDutyCard` component already had the capability to completely hide the change events tab by using the `disableChangeEvents` property but this feature was not documented. This information is now part of the official plugin documentation.
+
+    ```html
+    <EntitySwitch>
+      <EntitySwitch.Case if={isPagerDutyAvailable}>
+        <Grid item md={12}>
+          <EntityPagerDutyCard disableChangeEvents />
+        </Grid>
+      </EntitySwitch.Case>
+    </EntitySwitch>
+    ```
+
+### Changes
+
+- feat: hide on-call information
+- feat: hide trigger incident on missing integration key
+- chore(deps): bump express from 4.18.2 to 4.19.2
+- chore(deps): bump webpack-dev-middleware from 5.3.3 to 5.3.4
+
 ## > 0.10.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.10.0)
