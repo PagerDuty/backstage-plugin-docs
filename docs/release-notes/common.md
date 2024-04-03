@@ -1,4 +1,4 @@
-# Release notes for Frontend plugin
+# Release notes for Common library
 
 ## > 0.1.2
 
