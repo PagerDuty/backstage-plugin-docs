@@ -1,5 +1,21 @@
 # Release notes for Backend plugin
 
+## > 0.5.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.5.2)
+
+### Summary
+
+This release introduces a couple of security patches related to dependencies.
+
+- express
+- webpack-dev-middleware
+
+### Changes
+
+- build(deps): Bump webpack-dev-middleware from 5.3.3 to 5.3.4
+- build(deps): Bump express from 4.18.2 to 4.19.2
+
 ## > 0.5.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.5.1)

@@ -1,5 +1,21 @@
 # Release notes for Common library
 
+## > 0.1.3
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.1.3)
+
+### Summary
+
+This release introduces a couple of security patches related to dependencies.
+
+- express
+- webpack-dev-middleware
+
+### Changes
+
+- build(deps): Bump webpack-dev-middleware from 5.3.3 to 5.3.4
+- build(deps): Bump express from 4.18.2 to 4.19.2
+
 ## > 0.1.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.1.2)
