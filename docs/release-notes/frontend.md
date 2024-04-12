@@ -44,6 +44,11 @@ The `PagerDutyCard` component already had the capability to completely hide the 
 - chore(deps): bump express from 4.18.2 to 4.19.2
 - chore(deps): bump webpack-dev-middleware from 5.3.3 to 5.3.4
 
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: ^0.5.1`
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
+
 ## > 0.10.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.10.0)
@@ -72,6 +77,11 @@ This release also updates the behaviour of some components from the PagerDutyCar
 
 - chore(deps): bump follow-redirects from 1.15.4 to 1.15.6
 - style: refresh PagerDutyCard UI
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: ^0.5.1`
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
 
 ## > 0.9.3
 

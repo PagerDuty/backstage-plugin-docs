@@ -4,27 +4,35 @@ The PagerDuty backend plugin provides a custom action that you can use in your [
 
 By doing so, it enables and configures the PagerDuty Card provided by the frontend plugin directly on your service page, eliminating the need for manual configuration and enhancing the user experience.
 
-## Adding the backend plugin
+## Adding the Scaffolder Actions plugin
 
-This step is already covered on the `Getting Started` section of the documentation but if you haven't installed the package do it by running the following command from the root folder of your Backstage project.
+!!! note
+    Version 0.6.0 of `@pagerduty/backstage-plugin-backend` introduced support for the Backstage's new backend system which forced the extraction of the scaffolder actions to a separate package ([@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)).
+
+    If you were already using the scaffolder actions before this, follow the migration guide [here](/backstage-plugin-docs/advanced/backend-system-migration) as you need to perform a slight change in code.
 
 ```bash
-yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common # (1)!
+yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions @pagerduty/backstage-plugin-common # (1)!
 ```
 
-1. This command adds `@pagerduty/backstage-plugin-backend` and `@pagerduty/backstage-plugin-common` packages to the `packages/backend` folder because it is a backend plugin.
+1. This command adds `@pagerduty/backstage-plugin-scaffolder` and `@pagerduty/backstage-plugin-common` packages to the `packages/backend` folder because it is a backend module.
 
 ## Adding the custom action to the project
+
+You can add the custom action to the project in two different ways. Using the **legacy backend system** or the **new backend system**. Follow one of the approaches detailed below.
+
+### Legacy backend system
 
 Backstage Scaffolder capabilities can be extended with custom actions that support Software Templates. For that to happen you need to update `packages/backend/src/plugins/scaffolder.ts` and add custom actions.
 
 Now, the list of scaffolder actions cannot be appended so you need re-create it and append your custom action. Otherwise all actions will be replaced just with yours.
 
 ```typescript
+
 // Add imports
 import { createBuiltinActions } from '@backstage/plugin-scaffolder-backend';
 import { ScmIntegrations } from '@backstage/integration';
-import { createPagerDutyServiceAction } from '@pagerduty/backstage-plugin-backend';
+import { createPagerDutyServiceAction } from '@pagerduty/backstage-plugin-scaffolder-actions';
 
 export default async function createPlugin(
   env: PluginEnvironment,
@@ -44,7 +52,13 @@ export default async function createPlugin(
   });
 
   // Append PagerDuty custom action to the list
-  const actions = [...builtInActions, createPagerDutyServiceAction()];
+  const actions = [
+    ...builtInActions, 
+    createPagerDutyServiceAction({
+      config: env.config,
+      logger: env.logger,
+    })
+  ];
 
   // Add new action list to the scaffolder
   return await createRouter({
@@ -61,6 +75,14 @@ export default async function createPlugin(
 ```
 
 This step registers the custom action with the Scaffolder and allows it to be used in the Software template which you will configure on next step.
+
+### New backend system
+
+Backstage's new backend system simplifies the configuration of backend plugins and requires less code to setup plugins. To add the PagerDuty scaffolder actions to your Backstage application add the following in `packages/backend/src/index.ts`.
+
+```typescript
+backend.add(import('@pagerduty/backstage-plugin-scaffolder-actions'));
+```
 
 ## Adding the custom action to a Software Template
 

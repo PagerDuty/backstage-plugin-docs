@@ -98,7 +98,17 @@ annotations:
 
 ## Add the backend plugin to your application
 
-If you followed the steps in *"Installing the plugin"*, the backend plugin for PagerDuty is now added to your application but in order for it to expose its capabilities to the frontend plugin you need to configure it.
+!!! note
+    Version _0.6.0_ of the backend plugin (`@pagerduty/backstage-plugin-backend`) introduced support for Backstage's [new backend system](https://backstage.io/docs/backend-system/) which simplifies the backend configuration and requires less code.
+
+If you followed the steps in _"Installing the plugin"_, the backend plugin for PagerDuty is now added to your application but in order for it to expose its capabilities to the frontend plugin you need to configure it. There are two approaches for that: **Legacy Backend System** or the **New Backend System**.
+
+!!! warning
+    If you were using the PagerDuty plugin for Backstage before the release of `@pagerduty/backstage-plugin-backend@0.6.0` then you already have the Backend configured and you are probably looking for some migration steps, correct?
+
+    Check the migration guidance [here](/backstage-plugin-docs/advanced/backend-system-migration).
+
+### Legacy Backend System
 
 Create a new file called `pagerduty.ts` at `packages/backend/src/plugins/pagerduty.ts` and add the following content:
 
@@ -129,6 +139,17 @@ async function main() {
   const pagerdutyEnv = useHotMemoize(module, () => createEnv('pagerduty'));
   // ...
   apiRouter.use('/pagerduty', await pagerduty(pagerdutyEnv));
+```
+
+### New Backend System
+
+Backstage's new backend system requires less code to setup plugins. Just open `packages/backend/src/index.ts` file and add the PagerDuty backend plugin to your Backstage App as shown below.
+
+```typescript
+
+// pageduty plugin
+backend.add(import('@pagerduty/backstage-plugin-backend'));
+
 ```
 
 ## Configure API Authorization

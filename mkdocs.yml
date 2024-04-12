@@ -78,12 +78,15 @@ nav:
     - Enable read-only mode: advanced/enable-read-only-mode.md
     - Hide change events: advanced/hide-change-events.md
     - Hide on-call: advanced/hide-oncall.md
-  - Migration: migration.md
+  - Migration: 
+    - From Backstage-owned plugin: migration/from-backstage-owned.md
+    - To Backstage's new backend system: migration/backend-system-migration.md
   - Community: community.md
   - Release Notes:
     - Frontend plugin: release-notes/frontend.md
     - Backend plugin: release-notes/backend.md
     - Common library: release-notes/common.md
+    - Scaffolder Actions module: release-notes/scaffolder-actions.md
 
 markdown_extensions:
   - pymdownx.tasklist:

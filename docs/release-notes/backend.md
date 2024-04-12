@@ -1,5 +1,77 @@
 # Release notes for Backend plugin
 
+## > 0.6.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.6.0)
+
+### Summary
+
+This release adds support to the new [Backstage backend system](https://backstage.io/docs/backend-system/) without forcing users to move to the new backend system if they choose to stay in the legacy backend system for now.
+
+**Warning:** Existing backend plugin users need to make some changes in code because we had to extract the Scaffolder actions to a separate Backstage module ([@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)).
+
+**For existing users using the legacy backend system**
+
+1. Install new package
+
+    ```bash
+    yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions
+    yarn install
+    ```
+
+2. Update your existing reference in `packages/backend/src/plugins/scaffolder.ts` from the backend component to the new one
+
+    ```bash
+    import { createPagerDutyServiceAction } from '@pagerduty/backstage-plugin-scaffolder-actions';
+    ```
+
+3. Pass the environment _config_ and _logger_ to `createPagerDutyServiceAction`
+
+    ```typescript
+      const actions = [
+         ...builtInActions, 
+         createPagerDutyServiceAction({ 
+              config: env.config, 
+              logger: env.logger 
+         })
+      ];
+    ```
+
+**For users using the new backend system**
+
+1. Install new package
+
+    ```bash
+    yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions
+    yarn install
+    ```
+
+2. **(Optional)** If this is the first time configuring PagerDuty's plugin you also need the following packages
+
+    ```bash
+    yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common
+    yarn install
+    ```
+
+3. Add the package to your backend in `packages/backend/src/index.ts`
+
+    ```typescript
+    // PagerDuty backend plugin
+    backend.add(import('@pagerduty/backstage-plugin-backend'));
+   
+    // PagerDuty Scaffolder Actions Module
+    backend.add(import('@pagerduty/backstage-plugin-scaffolder-actions'));
+    ```
+
+### Changes
+
+- build(deps): Bump tar from 6.2.0 to 6.2.1
+- chore: add support to new backend system
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
+
 ## > 0.5.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.5.2)
@@ -16,6 +88,10 @@ This release introduces a couple of security patches related to dependencies.
 - build(deps): Bump webpack-dev-middleware from 5.3.3 to 5.3.4
 - build(deps): Bump express from 4.18.2 to 4.19.2
 
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
+
 ## > 0.5.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.5.1)
@@ -27,6 +103,10 @@ This release fixes a bug related to missing API scopes that was preventing the n
 ### Changes
 
 - fix: adds the required API scopes for the new UI
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
 
 ## > 0.5.0
 
@@ -40,6 +120,10 @@ This release introduces new backend API endpoints to query **service standards**
 
 - feat: apis supporting new card UI
 - build(deps): Bump follow-redirects from 1.15.5 to 1.15.6
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
 
 ## > 0.4.6
 

@@ -1,4 +1,4 @@
-# Migration
+# From Backstage-owned plugin
 
 If you are migrating from the PagerDuty plugin that was maintained by Backstage ([@backstage/plugin-pagerduty](https://www.npmjs.com/package/@backstage/plugin-pagerduty)), the steps to migrate are pretty straight forward.
 
