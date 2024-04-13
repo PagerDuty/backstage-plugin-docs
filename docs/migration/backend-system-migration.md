@@ -2,10 +2,7 @@
 
 Version 0.0.6 of `@pagerduty/backstage-plugin-backend` introduced support for Backstage's new backend system while remaining backwards compatible. So, if you want to continue using the legacy backend system you can do so. There's no rush!
 
-Still, a couple things changed.
-
-1. Due to an architecture change on the new backend system we add to extract the scaffolder actions to a new Backstage module ([@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)).
-2. The Scaffolder Action function signature now needs to receive a *config* and *logger* provider.
+Still, a couple things changed. Due to an architecture change on the new backend system we add to extract the scaffolder actions to a new Backstage module ([@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)).
 
 We are aware of the slight impact for existing users but with this decision we are able to support all customers and allow users to migrate their Backstage applications to the new model as they wish.
 
@@ -24,20 +21,6 @@ If you choose to upgrade to `@pagerduty/backstage-plugin-backend` 0.6.0 and stil
 
     ```typescript
     import { createPagerDutyServiceAction } from '@pagerduty/backstage-plugin-scaffolder-actions';
-    ```
-
-3. Pass *config* and *logger* to `createPagerDutyServiceAction`
-
-    ```typescript
-    ...
-    const actions = [
-        ...builtInActions, 
-        createPagerDutyServiceAction({
-          config: env.config,          // The config and logger parameters
-          logger: env.logger,          // were not needed before
-        })
-      ];
-    ...
     ```
 
 ## The new backend system

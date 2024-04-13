@@ -1,5 +1,21 @@
 # Release notes for Scaffolder Actions module
 
+## > 0.1.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-scaffolder-actions/releases/tag/0.1.1)
+
+### Summary
+
+This release introduces a small improvement to the migration process to the new backend system. With the change introduced we made the `createPagerDutyServiceAction` parameters optional and therefore existing users just need to update the package reference in `packages/backend/src/plugins/scaffolders.ts`.
+
+### Changes
+
+- refactor: refactor to avoid additional parameters
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
+
 ## > 0.1.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-scaffolder-actions/releases/tag/0.1.0)

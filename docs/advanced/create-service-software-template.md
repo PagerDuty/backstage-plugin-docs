@@ -9,7 +9,7 @@ By doing so, it enables and configures the PagerDuty Card provided by the fronte
 !!! note
     Version 0.6.0 of `@pagerduty/backstage-plugin-backend` introduced support for the Backstage's new backend system which forced the extraction of the scaffolder actions to a separate package ([@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)).
 
-    If you were already using the scaffolder actions before this, follow the migration guide [here](/backstage-plugin-docs/advanced/backend-system-migration) as you need to perform a slight change in code.
+    If you were already using the scaffolder actions before this, follow the migration guide [here](/backstage-plugin-docs/advanced/backend-system-migration) as you need to update the package used in the code.
 
 ```bash
 yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions @pagerduty/backstage-plugin-common # (1)!
@@ -54,10 +54,7 @@ export default async function createPlugin(
   // Append PagerDuty custom action to the list
   const actions = [
     ...builtInActions, 
-    createPagerDutyServiceAction({
-      config: env.config,
-      logger: env.logger,
-    })
+    createPagerDutyServiceAction()
   ];
 
   // Add new action list to the scaffolder
