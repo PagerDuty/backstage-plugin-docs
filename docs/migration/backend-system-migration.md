@@ -1,6 +1,6 @@
 # Migrate to Backstage's new backend system
 
-Version 0.0.6 of `@pagerduty/backstage-plugin-backend` introduced support for Backstage's new backend system while remaining backwards compatible. So, if you want to continue using the legacy backend system you can do so. There's no rush!
+Version 0.6.0 of `@pagerduty/backstage-plugin-backend` introduced support for Backstage's new backend system while remaining backwards compatible. So, if you want to continue using the legacy backend system you can do so. There's no rush!
 
 Still, a couple things changed. Due to an architecture change on the new backend system we add to extract the scaffolder actions to a new Backstage module ([@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)).
 
@@ -13,6 +13,7 @@ If you choose to upgrade to `@pagerduty/backstage-plugin-backend` 0.6.0 and stil
 1. Add and install the new package
 
     ```bash
+    yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend  # or upgrade to 0.6.0
     yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions
     yarn install
     ```
@@ -30,6 +31,7 @@ The new backend system reduces drastically the amount of code needed to setup pl
 1. Add and install the new package
 
     ```bash
+    yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend  # or upgrade to 0.6.0
     yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions
     yarn install
     ```
@@ -37,6 +39,7 @@ The new backend system reduces drastically the amount of code needed to setup pl
 2. Add backend middleware in `packages/backend/src/index.ts`
 
     ```typescript
+    backend.add(import('@pagerduty/backstage-plugin-backend'));
     backend.add(import('@pagerduty/backstage-plugin-scaffolder-actions'));
     ```
 
