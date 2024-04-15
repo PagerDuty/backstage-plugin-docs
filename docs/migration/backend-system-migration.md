@@ -13,9 +13,8 @@ If you choose to upgrade to `@pagerduty/backstage-plugin-backend` 0.6.0 and stil
 1. Add and install the new package
 
     ```bash
-    yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend  # or upgrade to 0.6.0
-    yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions
-    yarn install
+    yarn --cwd packages/backend add @pagerduty/backstage-plugin-backend  # or upgrade to 0.6.0
+    yarn --cwd packages/backend add @pagerduty/backstage-plugin-scaffolder-actions
     ```
 
 2. Update package name in `packages/backend/src/plugins/scaffolder.ts`
@@ -31,9 +30,8 @@ The new backend system reduces drastically the amount of code needed to setup pl
 1. Add and install the new package
 
     ```bash
-    yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend  # or upgrade to 0.6.0
-    yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions
-    yarn install
+    yarn --cwd packages/backend add @pagerduty/backstage-plugin-backend  # or upgrade to 0.6.0
+    yarn --cwd packages/backend add @pagerduty/backstage-plugin-scaffolder-actions
     ```
 
 2. Add backend middleware in `packages/backend/src/index.ts`
