@@ -1,5 +1,21 @@
 # Release notes for Scaffolder Actions module
 
+## > 0.1.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-scaffolder-actions/releases/tag/0.1.2)
+
+### Summary
+
+This release updates the `moduleId` to a PagerDuty specific one (`pagerduty-actions`). The `moduleId` configured on the initial release (`custom-extensions`) conflicts with the example value from the [backstage documentation for writing custom actions](https://backstage.io/docs/features/software-templates/writing-custom-actions#register-action-with-new-backend-system).
+
+### Changes
+
+- fix: use pagerduty-specific moduleId
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
+
 ## > 0.1.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-scaffolder-actions/releases/tag/0.1.1)
