@@ -13,3 +13,12 @@ To suppress the rendering of the on-call section, the `PagerDutyCard` can be ins
 This will hide the on-call tab for Backstage users.
 
 ![oncall-disabled](../images/oncall-disabled.png)
+
+!!! note
+    This feature is also available for other cards such as `PagerDutySmallCard`.
+
+    ```html
+    <EntityPagerDutySmallCard disableOnCall>
+    ```
+    
+    ![small-card-oncall-disabled](../images/small-card-simple.png)

@@ -1,5 +1,27 @@
 # Release notes for Frontend plugin
 
+## > 0.12.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.12.0)
+
+### Summary
+
+This release introduces a new UI component - `PagerDutySmallCard` - which allows users to still have visibility on the status of their PagerDuty services in Backstage without using so much screen space. This new UI component removes information on *incidents* and *recent changes*, and moves *insights* and *on call* information to collapsable panels that can optionally be removed.
+
+![small-card](../images/small-card-collapsed.png)
+
+This feature was initially contributed by [@milenkotomic](https://github.com/milenkotomic) and slightly modify after feedback from other community members.
+
+### Changes
+
+- feat: small sized PagerDutyCard component
+- chore(deps): bump tar from 6.2.0 to 6.2.1
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: ^0.5.1`
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
+
 ## > 0.11.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.11.0)
