@@ -15,10 +15,10 @@ This card doesn't show any *incidents* or *recent changes* as the idea is to be 
 
 ![pagerdutysmallcard-component-expanded](../images/small-card-expanded.png)
 
-You can add the `PagerDutySmallCard` to your Backstage application easily by following the steps highlighted in [Configuring Backstage](backstage-plugin-docs/getting-started/backstage) but use the `PagerDutySmallCard` instead.
+You can add the `PagerDutySmallCard` to your Backstage application easily by following the steps highlighted in [Configuring Backstage](/backstage-plugin-docs/getting-started/backstage) but use the `PagerDutySmallCard` instead.
 
-The *on call* and *insights* tabs can be removed from the Card by following the steps detailed in [hide on call](backstage-plugin-docs/advanced/hide-oncall) and [hide insights](backstage-plugin-docs/advanced/hide-insights).
+The *on call* and *insights* tabs can be removed from the Card by following the steps detailed in [hide on call](/backstage-plugin-docs/advanced/hide-oncall) and [hide insights](/backstage-plugin-docs/advanced/hide-insights).
 
 ![pagerdutysmallcard-component](../images/small-card-simple.png)
 
-You can optionally also disable the chance to *create new incidents* from the card by making it `read-only`. Refer to the [documentation](backstage-plugin-docs/advanced/enable-read-only-mode) to see how to do it.
+You can optionally also disable the chance to *create new incidents* from the card by making it `read-only`. Refer to the [documentation](/backstage-plugin-docs/advanced/enable-read-only-mode) to see how to do it.

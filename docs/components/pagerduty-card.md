@@ -12,8 +12,8 @@ The `PagerDutyCard` is the standard component that you can add to the Entity pag
 
 ![pagerdutycard-component](../images/list-incidents.png)
 
-You can add the `PagerDutyCard` to your Backstage application easily by following the steps highlighted in [Configuring Backstage](backstage-plugin-docs/getting-started/backstage).
+You can add the `PagerDutyCard` to your Backstage application easily by following the steps highlighted in [Configuring Backstage](/backstage-plugin-docs/getting-started/backstage).
 
-The *on call* and *change events* tabs can be removed from the Card by following the steps detailed in [hide change events](backstage-plugin-docs/advanced/hide-change-events) and [hide on call](backstage-plugin-docs/advanced/hide-oncall).
+The *on call* and *change events* tabs can be removed from the Card by following the steps detailed in [hide change events](backstage-plugin-docs/advanced/hide-change-events) and [hide on call](/backstage-plugin-docs/advanced/hide-oncall).
 
-You can optionally also disable the chance to *create new incidents* from the card by making it `read-only`. Refer to the [documentation](backstage-plugin-docs/advanced/enable-read-only-mode) to see how to do it.
+You can optionally also disable the chance to *create new incidents* from the card by making it `read-only`. Refer to the [documentation](/backstage-plugin-docs/advanced/enable-read-only-mode) to see how to do it.
