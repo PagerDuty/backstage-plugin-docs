@@ -1,5 +1,22 @@
 # Release notes for Backend plugin
 
+## > 0.6.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.6.1)
+
+### Summary
+
+This release adds security patches to fix **two moderate** and **two critical** vulnerabilities on _mysql2_ dependency.
+
+### Changes
+
+- build(deps): Bump mysql2 from 3.9.4 to 3.9.7
+- build(deps): Bump mysql2 from 3.9.2 to 3.9.4
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
+
 ## > 0.6.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.6.0)
