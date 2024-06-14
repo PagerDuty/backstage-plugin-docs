@@ -1,5 +1,42 @@
 # Release notes for Frontend plugin
 
+## > 0.12.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.12.1)
+
+### Summary
+
+**Version 0.12.1** updates all backstage dependencies to the latest version. The PR that originated this version was created based on customer request to update @backstage/core-components to version 0.14 ([#102](https://github.com/PagerDuty/backstage-plugin/issues/102)).
+
+We decided to use this opportunity to upgrade all packages (_see list of upgraded packages below_).
+
+**Dependencies:**
+
+- @backstage/catalog-model
+- @backstage/core-components
+- @backstage/core-plugin-api
+- @backstage/errors
+- @backstage/plugin-catalog-react
+- @backstage/plugin-home-react
+- @backstage/theme
+
+**DevDependencies:**
+
+- @backstage/cli
+- @backstage/core-app-api
+- @backstage/dev-utils
+- @backstage/test-utils
+
+### Changes
+
+- chore: upgrade backstage/core components to version 0.14
+- fix: correct client test case description
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: ^0.5.1`
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
+
 ## > 0.12.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.12.0)
