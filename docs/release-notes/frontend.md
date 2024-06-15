@@ -1,5 +1,23 @@
 # Release notes for Frontend plugin
 
+## > 0.12.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.12.2)
+
+### Summary
+
+This release includes a security patch and a bug fix that was allowing users to create incidents without defining the description of incidents after they created the first one. The state of the description property is now being cleaned up on successful incident creation.
+
+### Changes
+
+- chore(deps): bump braces from 3.0.2 to 3.0.3
+- fix: ensures incident description state is cleaned after an incident is triggered
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: ^0.5.1`
+- `@pagerduty/backstage-plugin-common: ^0.1.2`
+
 ## > 0.12.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.12.1)
