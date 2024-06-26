@@ -1,6 +1,6 @@
 # PagerDutySmallCard Component
 
-The `PagerDutySmallCard` is a component initially contributed by community members that you can add to the Entity page. This card presents similar information to `PagerDutyCard` but in a smaller form factor. It allows you to:
+The **PagerDutySmallCard** is a component initially contributed by community members that you can add to the Entity page. This card presents similar information to **PagerDutyCard** but in a smaller form factor. It allows you to:
 
 - check the **status** of your service
 - access relevant **service metrics**
@@ -15,7 +15,7 @@ This card doesn't show any *incidents* or *recent changes* as the idea is to be 
 
 ![pagerdutysmallcard-component-expanded](../images/small-card-expanded.png)
 
-You can add the `PagerDutySmallCard` to your Backstage application easily by following the steps highlighted in [Configuring Backstage](/backstage-plugin-docs/getting-started/backstage) but use the `PagerDutySmallCard` instead.
+You can add the **PagerDutySmallCard** to your Backstage application easily by following the steps highlighted in [Configuring Backstage](/backstage-plugin-docs/getting-started/backstage) but use the `EntityPagerDutySmallCard` instead.
 
 The *on call* and *insights* tabs can be removed from the Card by following the steps detailed in [hide on call](/backstage-plugin-docs/advanced/hide-oncall) and [hide insights](/backstage-plugin-docs/advanced/hide-insights).
 
