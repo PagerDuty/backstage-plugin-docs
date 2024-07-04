@@ -1,5 +1,32 @@
 # Release notes for Frontend plugin
 
+## > 0.13.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.13.0)
+
+### Summary
+
+Release **0.13.0** introduces a `PagerDutyPage` component which can be added to your Backstage menu and allows users to explore advanced PagerDuty configurations. With this release we are adding support for Entity mapping which allows users to easily map existing PagerDuty services to Backstage entities without requiring updates to each service config file.
+
+Below is an example of how the `PagerDutyPage` looks like when added to a Backstage instance.
+
+![image](https://github.com/PagerDuty/backstage-plugin/assets/2689939/79dbc42a-c094-429d-bd4f-2f0ba2fe6c5d)
+
+Users will be able to see if the entity definition is up to date with the configuration in file or not and chose to persist the changes by manually creating a PR in the source code.
+
+This release also applies a few security patches related to Backstage dependencies.
+
+### Changes
+
+- docs: update readme with mapping capability
+- feat: advanced config page
+- chore(deps): bump ws from 8.14.2 to 8.17.1
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: 0.7.0`
+- `@pagerduty/backstage-plugin-common: 0.1.5`
+
 ## > 0.12.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.12.2)

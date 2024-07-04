@@ -1,5 +1,34 @@
 # Release notes for Backend plugin
 
+## > 0.7.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.7.0)
+
+### Summary
+
+Release 0.7.0 adds support for new entity mapping APIs to be used by the frontend component to allow easy onboarding of existing services from PagerDuty into Backstage. This is a highly requested feature that aims to ease the process of onboarding existing PagerDuty services into Backstage.
+
+This release includes new API endpoints to:
+
+- Get all entity mappings persisted to the database
+- Get an entity mapping for a specific Backstage Entity reference
+- Persist mappings into the database
+
+These APIs introduce the needed mechanisms to persist data into the database selected by the Backstage Admin. The database table is automatically generated and is exclusively used by PagerDuty plugin Backstage to ensure data segregation.
+
+This release also includes a few security fixes on dependencies used by the Backstage packages.
+
+### Changes
+
+- feat: entity mapping persistence
+- build(deps): Bump @azure/identity from 4.0.1 to 4.2.1
+- build(deps): Bump mysql2 from 3.9.7 to 3.10.0
+- build(deps): Bump ws from 8.14.2 to 8.17.1
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: 0.1.5`
+
 ## > 0.6.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.6.1)

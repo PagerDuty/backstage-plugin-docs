@@ -90,6 +90,7 @@ nav:
     - Backend plugin: release-notes/backend.md
     - Common library: release-notes/common.md
     - Scaffolder Actions module: release-notes/scaffolder-actions.md
+    - Entity Processor module: release-notes/entity-processor.md
 
 markdown_extensions:
   - pymdownx.tasklist:

@@ -1,5 +1,31 @@
 # Release notes for Common library
 
+## > 0.1.5
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.1.5)
+
+### Summary
+
+This release adds support for entity mapping types to be used by processor, backend and frontend components for easy service mapping between Backstage and PagerDuty services.
+
+### Changes
+
+- feat: adding support for entity mapping types
+- chore(deps): Bump ws from 8.16.0 to 8.17.1
+
+## > 0.1.4
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.1.4)
+
+### Summary
+
+This release introduces a new type to support pagination when listing all services in PagerDuty.
+
+### Changes
+
+- feat: add support for service listing
+- chore(deps): Bump tar from 6.2.0 to 6.2.1
+
 ## > 0.1.3
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.1.3)
