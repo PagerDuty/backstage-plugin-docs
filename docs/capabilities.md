@@ -53,6 +53,17 @@ The PagerDuty plugin allows users to create incidents directly from Backstage. Y
 !!! note
     This feature can be disabled if you don't want users to create incidents manually from Backstage. To do so check the steps on how to [enable read-only mode](/backstage-plugin-docs/advanced/enable-read-only-mode/).
 
+### Map existing PagerDuty services to Backstage entities
+
+The PagerDuty plugin for Backstage allows Admins to add a `PagerDutyPage` component to their Backstage installation in order to easily map their existing PagerDuty services to Backstage entities without the need to make code changes to the service configuration.
+
+!!! warning
+    This feature currently supports 1:1 mapping between services and entities due to a limitation on the `PagerDutyCard` that only allows one service to be configured at a time.
+
+![service-entity-mapping](images/service-entity-mapping.png)
+
+This feature leverages the entity processor module to make the necessary updates to each Backstage entity configuration. The `PagerDutyPage` allows admins to see the status of each entity and decide wether to make the necessary change in source code to ensure the configuration is in sync.
+
 ## Backend
 
 The backend plugin (`@pagerduty/backstage-plugin-backend`) enables additional security when using the PagerDuty APIs and enables easy adoption of PagerDuty best practices through custom Backstage Scaffolder actions.

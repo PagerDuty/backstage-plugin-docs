@@ -78,9 +78,11 @@ nav:
     - Enable read-only mode: advanced/enable-read-only-mode.md
     - Hide change events: advanced/hide-change-events.md
     - Hide on-call: advanced/hide-oncall.md
+    - Mapping PagerDuty Services to Backstage Entities: advanced/service-entity-mapping.md
   - UI Components:
     - PagerDutyCard: components/pagerduty-card.md
     - PagerDutySmallCard: components/pagerduty-small-card.md
+    - PagerDutyPage: components/pagerduty-page.md
   - Migration: 
     - From Backstage-owned plugin: migration/from-backstage-owned.md
     - To Backstage's new backend system: migration/backend-system-migration.md

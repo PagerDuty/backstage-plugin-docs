@@ -11,16 +11,16 @@
 To install the PagerDuty plugin into Backstage run the following commands from your Backstage root directory.
 
 ```bash
-yarn add --cwd packages/app @pagerduty/backstage-plugin @pagerduty/backstage-plugin-common # (1)!
+yarn add --cwd packages/app @pagerduty/backstage-plugin # (1)!
 ```
 
-1. This command adds `@pagerduty/backstage-plugin` and `@pagerduty/backstage-plugin-common` packages to the `packages/app` folder because it is a frontend plugin.
+1. This command adds `@pagerduty/backstage-plugin` package to the `packages/app` folder because it is a frontend plugin.
 
 ```bash
-yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend @pagerduty/backstage-plugin-common # (1)!
+yarn add --cwd packages/backend @pagerduty/backstage-plugin-backend # (1)!
 ```
 
-1. This command adds `@pagerduty/backstage-plugin-backend` and `@pagerduty/backstage-plugin-common` packages to the `packages/backend` folder because it is a backend plugin.
+1. This command adds `@pagerduty/backstage-plugin-backend` package to the `packages/backend` folder because it is a backend plugin.
 
 **That's it!** Now it's time to add the plugin to Backstage and your services.
 
