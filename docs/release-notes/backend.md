@@ -1,5 +1,23 @@
 # Release notes for Backend plugin
 
+## > 0.7.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.7.2)
+
+### Summary
+
+This release handles properly an exception that was causing the entity mapping page to break when there is an integration key specified in the entity configuration and that integration key doesn't exist in the PagerDuty Account.
+
+Previously it would return an HTTP 404 error, causing the application to break. Now, it handles that error without breaking the application.
+
+### Changes
+
+- fix: ignore invalid integration keys when building entity reference dict
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: 0.1.5`
+
 ## > 0.7.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.7.1)
