@@ -1,5 +1,23 @@
 # Release notes for Backend plugin
 
+## > 0.7.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.7.1)
+
+### Summary
+
+PagerDuty advocates for full-service ownership and one recommendation on that direction is for customers to associate teams with services to state clear ownership of that service. Still, this is not enforced and therefore some customers don't have teams configured.
+
+This release ensures the backend handles empty teams arrays gracefully to prevent the PagerDutyPage component from staying in a loading state indefinitely.
+
+### Changes
+
+- fix: handle empty teams array to prevent TypeError
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: 0.1.5`
+
 ## > 0.7.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.7.0)
