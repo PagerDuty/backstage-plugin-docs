@@ -1,5 +1,27 @@
 # Release notes for Scaffolder Actions module
 
+## > 0.2.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-scaffolder-actions/releases/tag/0.2.0)
+
+### Summary
+
+This PR adds support for multi-account configuration to scaffolder actions. It introduces no changes for the end user and adapts to the configuration set in `app-config.yaml`. If multiple accounts are configured the user will see the list of all Escalation Policies in all accounts with the reference to it's source account.
+
+<img width="273" alt="multi-account escalation policy list" src="https://github.com/user-attachments/assets/61b6139e-e0ad-44a9-86ec-f1004b380e0f">
+
+At creation time, the scaffolder will select the correct account to deploy the service to depending on the select escalation policy/account pair selected.
+
+### Changes
+
+- feat: add support for multi accounts
+- chore(deps): Bump mysql2 from 3.9.2 to 3.9.7
+- chore(deps): Bump mysql2 from 3.9.7 to 3.10.0
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: ^0.2.0`
+
 ## > 0.1.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-scaffolder-actions/releases/tag/0.1.2)

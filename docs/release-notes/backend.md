@@ -1,5 +1,27 @@
 # Release notes for Backend plugin
 
+## > 0.8.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.8.0)
+
+### Summary
+
+This release introduces the necessary changes to support multi-account configurations.
+
+- Plugin database now supports account reference
+- All PagerDuty API operations are account aware
+- Updated plugin configuration schema to accept multi-account configurations
+
+We made extensive tests to ensure that the existing configuration for a single PagerDuty account still works. Therefore existing customers will be able to upgrade to the latest version without breaking anything.
+
+### Changes
+
+- feat: add support for multiple accounts
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: 0.2.0`
+
 ## > 0.7.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.7.2)

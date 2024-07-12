@@ -1,5 +1,29 @@
 # Release notes for Frontend plugin
 
+## > 0.14.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.14.0)
+
+### Summary
+
+**Release 0.14.0** introduces support for multi-account configuration. With this release, admins will be able to specify multiple PagerDuty accounts in the same Backstage instance. Support was added across all the components of the plugin:
+
+- **Backend:** All API routes exposed take account as an optional parameter so you can create and query information from different PagerDuty Accounts. If admins leverage the Entity Mapping feature, the account is now persisted into the plugin database.
+- **Scaffolder Actions:** When the scaffolder action is used on a template it now lists Escalation Policies from all accounts configured so the user can easily select the one they want. The Scaffolder action
+also outputs the account so it can be replaced in the `app-config.yaml` annotations.
+- **Entity Processor:** If an entity mapping stored in the plugin database contains the `account` property, the processor will add an annotation to the entity with its information.
+
+This release solves an existing problem for many large organizations that have several PagerDuty accounts for segregation purposes or that result from company acquisitions.
+
+### Changes
+
+- feat: add support for multi-account
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: 0.8.0`
+- `@pagerduty/backstage-plugin-common: 0.2.0`
+
 ## > 0.13.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.13.0)

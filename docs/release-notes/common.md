@@ -1,5 +1,28 @@
 # Release notes for Common library
 
+## > 0.2.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.2.0)
+
+### Summary
+
+This release adds type support for multi-account configuration for all aspects of the PagerDuty plugin for Backstage:
+
+- UI Components:
+  - `PagerDutyCard`
+  - `PagerDutySmallCard`
+- Entity Mapping Page
+- Entity Processor
+- Scaffolder Action
+
+With these changes users with multiple PagerDuty accounts can now configure their services in the same Backstage instance.
+
+### Changes
+
+- feat: add account field to PagerDuty types
+- chore(deps): Bump @azure/identity from 4.0.0 to 4.3.0
+- chore(deps): Bump braces from 3.0.2 to 3.0.3
+
 ## > 0.1.5
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.1.5)
