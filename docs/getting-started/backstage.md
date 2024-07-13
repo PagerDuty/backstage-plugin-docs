@@ -96,6 +96,16 @@ annotations:
 
       1. The service id can be found by navigating to a Service with PagerDuty console and pulling the ID value out of the URL (e.g. https://[YOUR-ACCOUNT].pagerduty.com/service-directory/[SERVICE-ID]).
 
+!!! note
+    If you are using multiple PagerDuty accounts in your setup you should add an `account` annotation to your Backstage entities. This way the plugin knows with which instance to communicate with. If you don't provide one, the account that was selected as the default one will be used.
+
+    ```yaml
+    annotations:
+        pagerduty.com/account: [PAGERDUTY-ACCOUNT] #(1)!
+    ```
+
+      1. The account value defined here is the PagerDuty account subdomain where the PagerDuty service mapped to your Backstage entity resides (e.g. https://[PAGERDUTY-ACCOUNT].pagerduty.com).
+
 ## Add the backend plugin to your application
 
 !!! note
@@ -157,9 +167,13 @@ backend.add(import('@pagerduty/backstage-plugin-backend'));
 The PagerDuty plugin requires access to PagerDuty APIs and so we need to configure our Backstage app with the necessary credentials to reach the APIs. This step requires you to use an access token - for OAuth - or an API token.
 
 !!! note
-    If you followed previous steps you should have this information already but if you haven't done so follow the steps in [Register an App](/backstage-plugin-docs/getting-started/pagerduty/#register-an-application-for-scoped-oauth-recommended) to get the *client id* and *client secret* for OAuth authorization or [Generate a General Access REST API Token](/backstage-plugin-docs/getting-started/pagerduty/#generate-a-general-access-rest-api-token) to generate a REST API Token.
+    If you followed previous steps you should have this information already but if you haven't done so follow the steps in [Register an App](/backstage-plugin-docs/getting-started/pagerduty/#register-an-application-for-scoped-oauth-recommended) to get the _client id_ and _client secret_ for OAuth authorization or [Generate a General Access REST API Token](/backstage-plugin-docs/getting-started/pagerduty/#generate-a-general-access-rest-api-token) to generate a REST API Token.
 
-### Scoped OAuth (recommended)
+### Single PagerDuty Account
+
+If all your services exist in a single PagerDuty account you should follow the instructions below.
+
+#### Scoped OAuth (recommended)
 
 In `app-config.yaml` file add the following configuration and set your OAuth configuration:
 
@@ -173,6 +187,8 @@ pagerDuty:
                                   // Defaults to 'us'.
 ```
 
+#### REST API Token
+
 In `app-config.yaml` file add the following configuration to set your REST API Token:
 
 ```yaml
@@ -182,6 +198,54 @@ pagerDuty:
 
 !!! warning
     If you were using the plugin **before version 0.8.1** of the frontend or **version 0.3.1** of the backend you need to configure a proxy configuration instead. That configuration is now deprecated so use this configuration instead.
+
+### Multiple PagerDuty Accounts
+
+Companies may have more than one PagerDuty account for many reasons. It might be because they want to segregate access to information to specific teams, or maybe because the company acquired any company that was already a PagerDuty customer.
+
+Independent of the reason, we added multi-account support on version 0.14.0 of the frontend plugin (@pagerduty/backstage-plugin). In order to configure it you should follow the steps below.
+
+#### Scoped OAuth (recommended)
+
+In `app-config.yaml` file add the following configuration and set your OAuth configuration:
+
+```yaml
+pagerDuty:
+  accounts:
+  - id: ${PD_ACCOUNT_SUBDOMAIN_1}    // The ID must be the subdomain for the account
+    isDefault: true                  // Only one account can be defined as the default/fallback
+    apiBaseUrl: ${PD_API_BASE_URL_1}
+    oauth:
+      clientId: ${PD_CLIENT_ID_1}
+      clientSecret: ${PD_CLIENT_SECRET_1}
+      subDomain: ${PD_ACCOUNT_SUBDOMAIN_!}
+      region: ${PD_ACCOUNT_REGION_1}  // Optional. allowed values: 'us', 'eu'.
+                                  // Defaults to 'us'.
+  - id: ${PD_ACCOUNT_SUBDOMAIN_2}
+    apiBaseUrl: ${PD_API_BASE_URL_2}
+    oauth:
+      clientId: ${PD_CLIENT_ID_2}
+      clientSecret: ${PD_CLIENT_SECRET_2}
+      subDomain: ${PD_ACCOUNT_SUBDOMAIN_2}
+```
+
+#### REST API Token
+
+In `app-config.yaml` file add the following configuration to set your REST API Token:
+
+```yaml
+pagerDuty:
+  accounts:
+  - id: ${PD_ACCOUNT_SUBDOMAIN_1}    // The ID must be the subdomain for the account
+    isDefault: true                  // Only one account can be defined as the default/fallback
+    apiBaseUrl: ${PD_API_BASE_URL_1}
+    apiToken: ${PAGERDUTY_TOKEN}
+  - id: ${PD_ACCOUNT_SUBDOMAIN_2}
+    apiToken: ${PAGERDUTY_TOKEN}
+```
+
+!!! NOTE
+    In the new multi-account setup you can have accounts configured with **Scoped OAuth** and others with **REST API Token**. You can also specify custom API base url and events url for some and not others. All optional properties will revert to default values if not present.
 
 ## Test your configuration
 
