@@ -9,8 +9,10 @@
 This release adds type support for multi-account configuration for all aspects of the PagerDuty plugin for Backstage:
 
 - UI Components:
+  
   - `PagerDutyCard`
   - `PagerDutySmallCard`
+  
 - Entity Mapping Page
 - Entity Processor
 - Scaffolder Action

@@ -2,9 +2,22 @@
 
 The default URL used for REST API requests is `https://api.pagerduty.com`. It is possible to override this URL through configuration. Add the following configuration to `app-config.yaml`:
 
+## Single Account
+
 ```yaml
 pagerDuty:
   apiBaseUrl: 'https://api.eu.pagerduty.com'
+```
+
+## Multiple Accounts
+
+```yaml
+pagerDuty:
+  accounts:
+  - id: ${PD_SUBDOMAIN}
+    isDefault: true
+    apiBaseUrl: 'https://api.eu.pagerduty.com'
+    ...
 ```
 
 !!! note

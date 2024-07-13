@@ -2,9 +2,22 @@
 
 The default URL used for events is `https://events.pagerduty.com/v2`. It is possible to override this URL through configuration. Add the following configuration to `app-config.yaml`:
 
+## Single Account
+
 ```yaml
 pagerDuty:
   eventsBaseUrl: 'https://events.pagerduty.com/v2'
+```
+
+## Multiple Accounts
+
+```yaml
+pagerDuty:
+  accounts:
+  - id: ${PD_SUBDOMAIN}
+    isDefault: true
+    eventsBaseUrl: 'https://events.pagerduty.com/v2'
+    ...
 ```
 
 !!! note

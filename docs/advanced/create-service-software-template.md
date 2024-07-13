@@ -12,10 +12,10 @@ By doing so, it enables and configures the PagerDuty Card provided by the fronte
     If you were already using the scaffolder actions before this, follow the migration guide [here](/backstage-plugin-docs/advanced/backend-system-migration) as you need to update the package used in the code.
 
 ```bash
-yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions @pagerduty/backstage-plugin-common # (1)!
+yarn add --cwd packages/backend @pagerduty/backstage-plugin-scaffolder-actions # (1)!
 ```
 
-1. This command adds `@pagerduty/backstage-plugin-scaffolder` and `@pagerduty/backstage-plugin-common` packages to the `packages/backend` folder because it is a backend module.
+1. This command adds `@pagerduty/backstage-plugin-scaffolder` package to the `packages/backend` folder because it is a backend module.
 
 ## Adding the custom action to the project
 
@@ -100,13 +100,14 @@ metadata:
   annotations:
     pagerduty.com/integration-key: ${{ values.integrationKey | dump }}
     pagerduty.com/service-id: ${{ values.serviceId | dump }}
+    pagerduty.com/account: ${{ values.account | dump }}
 spec:
   type: website
   lifecycle: experimental
   owner: guests
 ```
 
-In the software template we will either replace the values for the `integration-key`, `service-id` and `name` or completely remove the parameters from the configuration.
+In the software template we will either replace the values for the `integration-key`, `service-id`, `account` and `name` or completely remove the parameters from the configuration.
 
 !!! note
     You don't need to use this exact template but to automate the configuration for the PagerDuty Card you need to have at least the `integration-key` or the `service-id` parameters.
@@ -238,6 +239,7 @@ spec:
           name: ${{ parameters.service_name }}
           serviceId: ${{ steps['pagerdutyService'].output.serviceId }}
           integrationKey: ${{ steps['pagerdutyService'].output.integrationKey }}
+          account: ${{ steps['pagerdutyService'].output.account }}
 
     - id: publish
       name: Publish
