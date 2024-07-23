@@ -1,5 +1,21 @@
 # Release notes for Backend plugin
 
+## > 0.8.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.8.1)
+
+### Summary
+
+This release bumps all Backstage packages to the latest version to allow an upgrade to 1.29.1 without any warnings on outdated packages.
+
+### Changes
+
+- fix: bump deps to work with backstage v1.29.0
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: 0.2.0`
+
 ## > 0.8.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.8.0)
