@@ -1,5 +1,21 @@
 # Release notes for Backend plugin
 
+## > 0.8.2
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.8.2)
+
+### Summary
+
+This release fixes some potential issues with JSON.parse on unsafe parameters that can lead to unexpected exceptions.
+
+### Changes
+
+- chore: refactor JSON.parse usage on unsafe code
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: 0.2.0`
+
 ## > 0.8.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.8.1)
