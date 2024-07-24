@@ -1,5 +1,25 @@
 # Release notes for Frontend plugin
 
+## > 0.14.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.14.1)
+
+### Summary
+
+This release refactors areas where JSON.parse was used in unsafe code which leaves the potential for unexpected exceptions.
+
+It also bumps Backstage package versions and fixes a high severity security issue on a 3rd party dependency.
+
+### Changes
+
+- chore(deps): bump fast-loops from 1.1.3 to 1.1.4
+chore: remove json parse from unsafe code
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: 0.8.0`
+- `@pagerduty/backstage-plugin-common: 0.2.0`
+
 ## > 0.14.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.14.0)
