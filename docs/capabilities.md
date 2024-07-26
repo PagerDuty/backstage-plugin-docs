@@ -64,6 +64,19 @@ The PagerDuty plugin for Backstage allows Admins to add a `PagerDutyPage` compon
 
 This feature leverages the entity processor module to make the necessary updates to each Backstage entity configuration. The `PagerDutyPage` allows admins to see the status of each entity and decide wether to make the necessary change in source code to ensure the configuration is in sync.
 
+### Sync service dependencies between Backstage and PagerDuty
+
+The PagerDuty plugin allows users to keep service dependencies in-sync between Backstage and PagerDuty in an automated way. This feature is disabled by default but you can easily enable it in the PagerDuty Advanced Configurations Page in `PagerDutyPage`.
+
+![Service-dependency-synchronization-strategy](https://github.com/user-attachments/assets/f8332378-2439-4b7d-b130-b73acccd666b)
+
+This feature allows you to sync service dependencies from Backstage to PagerDuty or merge the dependencies from both sides.
+
+!!! note
+    Due to a Backstage design decision it is not possible to fully overwrite the relations specified in each entity's configuration file.
+
+    For that reason the option to synchronise strictly from PagerDuty side is not available.
+
 ## Backend
 
 The backend plugin (`@pagerduty/backstage-plugin-backend`) enables additional security when using the PagerDuty APIs and enables easy adoption of PagerDuty best practices through custom Backstage Scaffolder actions.

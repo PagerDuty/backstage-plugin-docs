@@ -73,6 +73,7 @@ nav:
   - Advanced:
     - Configure REST API url: advanced/configure-api-url.md
     - Configure Events url: advanced/configure-events-url.md
+    - Configure service dependency sync: advanced/configure-service-dependency-sync.md
     - Create an homepage component: advanced/homepage-component.md
     - Create PagerDuty service with Software Templates: advanced/create-service-software-template.md
     - Enable read-only mode: advanced/enable-read-only-mode.md
