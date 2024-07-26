@@ -16,7 +16,12 @@ The PagerDuty plugin for Backstage will in essence perform **two types of action
 
 Perform the following steps on PagerDuty before integrating the plugin in Backstage.
 
-### **Create a service integration for Backstage**
+### **Create a service integration for Backstage (optional)**
+
+!!! note
+    In one the latest releases of the plugin (@pagerduty/backstage-plugin-backend:0.9.0) we introduced a mechanism to automatically create a Backstage integration on every service mapped to a Backstage instance that doesn't have an integration setup yet. This saves admins time setting up the the integration between Backstage entities and PagerDuty services.
+
+    You might still want to create integrations yourself in some situations, for instance, if you are using Terraform to configure your PagerDuty services. In that case, the plugin will just pick this information up and add it as an annotation on the entity.
 
 Creating a service integration in PagerDuty is the default mechanism to connect services with alerts coming from third-party tools and platforms. In order to create a service integration you can follow **three different approches**:
 

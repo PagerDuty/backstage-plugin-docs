@@ -81,20 +81,14 @@ For every component that shows up in your Backstage catalog you have a `.yaml` f
 
 ```yaml
 annotations:
-  pagerduty.com/integration-key: [INTEGRATION-KEY] #(1)!
+  pagerduty.com/service-id: [SERVICE-ID] #(1)!
 ```
 
-1. The integration key is generated per service and is obtained on the service integrations page on the PagerDuty console. If you don't have one, follow the steps at [Create a service integration for Backstage](/backstage-plugin-docs/getting-started/pagerduty/#create-a-service-integration-for-backstage).
+1. The service id can be found by navigating to a Service with PagerDuty console and pulling the ID value out of the URL (e.g. https://[YOUR-ACCOUNT].pagerduty.com/service-directory/[SERVICE-ID]).
 
-!!! note
-    You can optionally decide to annotate with a **service id** instead but you **won't be able to create incidents** from Backstage if you do so and the `Create Incident` button will not show on the PagerDuty card.
+By default, if you only specify the `pagerduty.com/service-id` annotation, the `PagerDutyCard` component will disable the **Create Incident** button. But if you are using one of the latest versions (@pagerduty/backstage-plugin-backend:0.9.0 or higher) there is a mechanism to automatically create an integration in your PagerDuty services and add a `pagerduty.com/integration-key` annotation to the corresponding Backstage entity, therefore enabling the option to create incidents from the `PagerDutyCard`.
 
-    ```yaml
-    annotations:
-        pagerduty.com/service-id: [SERVICE-ID] #(1)!
-    ```
-
-      1. The service id can be found by navigating to a Service with PagerDuty console and pulling the ID value out of the URL (e.g. https://[YOUR-ACCOUNT].pagerduty.com/service-directory/[SERVICE-ID]).
+You can optionally decide to annotate with an **integration-key** instead and the plugin will get the corresponding `service-id` and add it as an annotation but since it requires more steps we recommend users to annotate with `pagerduty.com/service-id`.
 
 !!! note
     If you are using multiple PagerDuty accounts in your setup you should add an `account` annotation to your Backstage entities. This way the plugin knows with which instance to communicate with. If you don't provide one, the account that was selected as the default one will be used.
