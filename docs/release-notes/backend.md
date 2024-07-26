@@ -1,5 +1,31 @@
 # Release notes for Backend plugin
 
+## > 0.9.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.9.0)
+
+### Summary
+
+This release introduces a set of features that were in a way dependent on each other which makes it quite large when compared to a typical release.
+
+- **Automated Backstage integration setup for mapped entities**: With the goal of simplifying the setup process for mapped entities we introduced a feature that automatically creates a integration on the corresponding PagerDuty service when a `pagerduty.com/service-id` property is available.
+
+  With this feature, admins can skip the step of creating an integration in PagerDuty and copy the integration key to each Backstage entity file. They can now simply add the `pagerduty.com/service-id` annotation to their service, or simply use the `PagerDutyPage` to map existing PagerDuty services to Backstage entities and the plugin will take care of the rest.
+
+- **Plugin configuration persistence layer**: To support two-way sync for service dependencies we decided to give the admins the option of choosing which is their main source of truth and for that reason we introduced a new section in `PagerDutyPage` where you can specify your preferences. The backend centralises all the persistence layer and this release includes all the necessary methods for it.
+
+- **Two-way service dependency sync**: This release introduces a way to keep your service dependencies in sync between PagerDuty and Backstage. Admins will be able to choose which source is the main one. This is an opt-in feature that you can enable on the `PagerDutyPage` under the `configuration` tab.
+
+  ‼️ **Important**: Due to a Backstage design decision it is not possible to fully overwrite the relations specified in each entity's configuration file. For that reason the option to synchronise strictly from PagerDuty side is not available.
+
+### Changes
+
+- feat: service dependency sync
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: 0.2.1`
+
 ## > 0.8.2
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.8.2)

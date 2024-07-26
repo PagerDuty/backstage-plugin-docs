@@ -1,5 +1,17 @@
 # Release notes for Common library
 
+## > 0.2.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.2.1)
+
+### Summary
+
+This PR adds support for a new settings type to support the service dependency sync feature.
+
+### Changes
+
+- feat: service dependency sync
+
 ## > 0.2.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-common/releases/tag/0.2.0)

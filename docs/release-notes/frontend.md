@@ -1,5 +1,32 @@
 # Release notes for Frontend plugin
 
+## > 0.15.0
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.15.0)
+
+### Summary
+
+This release updates the `PagerDutyPage` component to add a new configurations tab where users can configure how they want to sync service dependencies between Backstage and PagerDuty.
+
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/f8332378-2439-4b7d-b130-b73acccd666b">
+
+**By default, service dependency syncing is disabled.** It's an opt-in feature and admins need to be aware of what it does because you might end up deleting existing service dependencies on Backstage or PagerDuty.
+
+‼️ Important: Due to a Backstage design decision it is not possible to fully overwrite the relations specified in each entity's configuration file. For that reason the option to synchronise strictly from PagerDuty side is not available.
+
+On this release we also introduced a fix that was preventing users from showing/hiding columns on the service to entity mapping table.
+
+### Changes
+
+- refactor: disabled PagerDuty option due to a design limitation on Backstage
+- fix: turned columnvisibility into a static object
+- feat: service dependency sync
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: 0.9.0`
+- `@pagerduty/backstage-plugin-common: 0.2.1`
+
 ## > 0.14.1
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.14.1)
@@ -13,7 +40,7 @@ It also bumps Backstage package versions and fixes a high severity security issu
 ### Changes
 
 - chore(deps): bump fast-loops from 1.1.3 to 1.1.4
-chore: remove json parse from unsafe code
+- chore: remove json parse from unsafe code
 
 ### Dependencies
 
@@ -132,7 +159,7 @@ We decided to use this opportunity to upgrade all packages (_see list of upgrade
 
 ### Summary
 
-This release introduces a new UI component - `PagerDutySmallCard` - which allows users to still have visibility on the status of their PagerDuty services in Backstage without using so much screen space. This new UI component removes information on *incidents* and *recent changes*, and moves *insights* and *on call* information to collapsable panels that can optionally be removed.
+This release introduces a new UI component - `PagerDutySmallCard` - which allows users to still have visibility on the status of their PagerDuty services in Backstage without using so much screen space. This new UI component removes information on _incidents_ and _recent changes_, and moves _insights_ and _on call_ information to collapsable panels that can optionally be removed.
 
 ![small-card](../images/small-card-collapsed.png)
 
@@ -328,7 +355,7 @@ With this changes instead of getting an out-of-context error message users will 
 
 Version 0.8.2 bumps the version of `@pagerduty/backstage-plugin-common` to version 0.0.2.
 
-Version 0.0.1 had a misconfiguration that was forcing the backend plugin to load it as an *ES6 module* and while that's supported for the frontend it is not yet fully supported for backend plugins.
+Version 0.0.1 had a misconfiguration that was forcing the backend plugin to load it as an _ES6 module_ and while that's supported for the frontend it is not yet fully supported for backend plugins.
 
 This dependency upgrade syncs the version of the common package between frontend and backend plugins.
 
