@@ -9,7 +9,7 @@ This feature is very powerfull for users that want to leverage [PagerDuty Status
 
     These changes might not reflect immediatelly because the `CatalogProcessor` runs on a schedule and the plugin doesn't have control over that. Backstage admins can configure the frequency in which the entities are processed.
 
-This feature is **disabled** by default but can easily be enabled on the PagerDuty advanced configuration page. If you haven't enabled it yet you can do so by following the instructions in [here](/backstage-plugin-docs/advanced/service-entity-mapping).
+This feature is **disabled** by default but can easily be enabled on the PagerDuty advanced configuration page. If you haven't enabled it yet you can do so by following the instructions in [here](/backstage-plugin-docs/advanced/service-entity-mapping/#adding-the-pagerdutypage-component).
 
 ![on-call-engineer](https://github.com/user-attachments/assets/f8332378-2439-4b7d-b130-b73acccd666b)
 
