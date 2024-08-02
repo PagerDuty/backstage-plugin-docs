@@ -1,5 +1,21 @@
 # Release notes for Backend plugin
 
+## > 0.9.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.9.1)
+
+### Summary
+
+This release introduces a few enhancements that to ensure **a)** no undesired code is executed when an exception is caught, and **b)** to avoid trying to emit headers multiple times.
+
+### Changes
+
+- fix: add missing "return" statements after errors
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: 0.2.1`
+
 ## > 0.9.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-backend/releases/tag/0.9.0)
