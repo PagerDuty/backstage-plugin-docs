@@ -176,10 +176,16 @@ pagerDuty:
   oauth:
     clientId: ${PD_CLIENT_ID}
     clientSecret: ${PD_CLIENT_SECRET}
-    subDomain: ${PD_ACCOUNT_SUBDOMAIN}
-    region: ${PD_ACCOUNT_REGION}  // Optional. allowed values: 'us', 'eu'.
-                                  // Defaults to 'us'.
+    subDomain: ${PD_ACCOUNT_SUBDOMAIN} 
+    region: ${PD_ACCOUNT_REGION}        // Optional. 
+                                        // Allowed values: 'us', 'eu'.
+                                        // Defaults to 'us'.
 ```
+
+!!! note
+    The `subDomain` property requires only the first segment of your PagerDuty account url. **Example:** If your PagerDuty account url is `https://myaccount.pagerduty.com` then your `subDomain` value should be `myaccount`.
+
+    Configuring it with an invalid value might cause authentication to fail.
 
 #### REST API Token
 
@@ -212,7 +218,7 @@ pagerDuty:
     oauth:
       clientId: ${PD_CLIENT_ID_1}
       clientSecret: ${PD_CLIENT_SECRET_1}
-      subDomain: ${PD_ACCOUNT_SUBDOMAIN_!}
+      subDomain: ${PD_ACCOUNT_SUBDOMAIN_1}
       region: ${PD_ACCOUNT_REGION_1}  // Optional. allowed values: 'us', 'eu'.
                                   // Defaults to 'us'.
   - id: ${PD_ACCOUNT_SUBDOMAIN_2}
@@ -222,6 +228,11 @@ pagerDuty:
       clientSecret: ${PD_CLIENT_SECRET_2}
       subDomain: ${PD_ACCOUNT_SUBDOMAIN_2}
 ```
+
+!!! note
+    The `subDomain` property requires only the first segment of your PagerDuty account url. **Example:** If your PagerDuty account url is `https://myaccount.pagerduty.com` then your `subDomain` value should be `myaccount`.
+
+    Configuring it with an invalid value might cause authentication to fail.
 
 #### REST API Token
 
