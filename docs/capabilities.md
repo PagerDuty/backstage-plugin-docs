@@ -19,8 +19,6 @@ The plugin provides an easy mechanism to check the current status for the servic
 
     ![service-standards-list](images/service-standards-list.png)
 
-
-
 ### View any open incidents
 
 The plugin lists all open incidents on a specific service and allows you to navigate to the incident detail page in PagerDuty.
@@ -68,14 +66,9 @@ This feature leverages the entity processor module to make the necessary updates
 
 The PagerDuty plugin allows users to keep service dependencies in-sync between Backstage and PagerDuty in an automated way. This feature is disabled by default but you can easily enable it in the PagerDuty Advanced Configurations Page in `PagerDutyPage`.
 
-![Service-dependency-synchronization-strategy](https://github.com/user-attachments/assets/f8332378-2439-4b7d-b130-b73acccd666b)
+![Service-dependency-synchronization-strategy](images/dependency-sync-strategy.png)
 
-This feature allows you to sync service dependencies from Backstage to PagerDuty or merge the dependencies from both sides.
-
-!!! note
-    Due to a Backstage design decision it is not possible to fully overwrite the relations specified in each entity's configuration file.
-
-    For that reason the option to synchronise strictly from PagerDuty side is not available.
+This feature allows you to sync service dependencies from **Backstage to PagerDuty**, **PagerDuty to Backstage** or **merge the dependencies from both sides**.
 
 ## Backend
 
