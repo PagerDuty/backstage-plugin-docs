@@ -1,5 +1,23 @@
 # Release notes for Entity Processor module
 
+## > 0.3.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin-entity-processor/releases/tag/0.3.1)
+
+### Summary
+
+Release **0.3.1** removes a limitation that prevented users from enabling PagerDuty as their main source for syncing service dependencies.
+
+With the help of the Backstage team, we were able to implement a few changes that overcome this limitation and users are now able to set PagerDuty as their main source for service dependencies and get their dependencies sync to Backstage for all mapped entities.
+
+### Changes
+
+- feat: enable pagerduty service dependency sync
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-common: 0.2.1`
+
 ## > 0.3.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin-entity-processor/releases/tag/0.3.0)

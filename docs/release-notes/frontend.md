@@ -1,5 +1,25 @@
 # Release notes for Frontend plugin
 
+## > 0.15.1
+
+[GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.15.1)
+
+### Summary
+
+This release enables the `PagerDuty` option in the PagerDutyPage component settings which allows users to set PagerDuty as their main source for syncing service dependencies to Backstage.
+
+This feature was disabled due to a limitation on version [0.3.0](https://github.com/PagerDuty/backstage-plugin-entity-processor/releases/tag/0.3.0) of `@pagerduty/backstage-plugin-entity-processor` which is now fixed and released on version [0.3.1](https://github.com/PagerDuty/backstage-plugin-entity-processor/releases/tag/0.3.1).
+
+### Changes
+
+- refactor: enable PagerDuty option on PagerDutyPage
+
+### Dependencies
+
+- `@pagerduty/backstage-plugin-backend: 0.9.0`
+- `@pagerduty/backstage-plugin-common: 0.2.1`
+- `@pagerduty/backstage-plugin-entity-provider: 0.3.1`
+
 ## > 0.15.0
 
 [GitHub release](https://github.com/PagerDuty/backstage-plugin/releases/tag/0.15.0)

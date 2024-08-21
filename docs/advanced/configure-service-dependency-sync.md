@@ -11,13 +11,16 @@ This feature is very powerfull for users that want to leverage [PagerDuty Status
 
 This feature is **disabled** by default but can easily be enabled on the PagerDuty advanced configuration page. If you haven't enabled it yet you can do so by following the instructions in [here](/backstage-plugin-docs/advanced/service-entity-mapping/#adding-the-pagerdutypage-component).
 
-![on-call-engineer](https://github.com/user-attachments/assets/f8332378-2439-4b7d-b130-b73acccd666b)
+![dependency-sync-strategy](../images/dependency-sync-strategy.png)
 
-Here you can choose to use Backstage as the main source and the plugin will automatically add/remove service dependencies to your mapped entities in PagerDuty. You can optionally choose to merge service dependencies from Backstage and PagerDuty or even keep it disabled.
+Here you can choose:
+
+- to use **Backstage as the main source** and the plugin will automatically add/remove service dependencies to your mapped entities in PagerDuty
+- to set **PagerDuty as the main source** and the plugin will automatically add/remove entity relations in Backstage
+- to **merge service dependencies** from Backstage and PagerDuty
+- to keep it **disabled**.
 
 !!! note
     The syncing mechanism will overwrite all services on the destination so use this mechanism carefully.
 
     **Example:** You set Backstage as your main source and you already have service dependencies in PagerDuty. Those will be overwritten has Backstage is now configured as the source of thruth.
-
-‼️ **Important**: Due to a Backstage design decision it is not possible to fully overwrite the relations specified in each entity's configuration file. For that reason the option to synchronise strictly from PagerDuty side is not available.
