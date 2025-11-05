@@ -156,6 +156,24 @@ backend.add(import('@pagerduty/backstage-plugin-backend'));
 
 ```
 
+## Disable Backstage Backend API Authorization
+
+This option is available as a way to maintain backwards compatibility, and should not be used in situations where your
+Backstage instance is accessible from outside of a trusted network - Or ideally, at all.
+
+Access to a Backstage plugin's routes is restricted by use of a Bearer authorization token, which is typically issued
+after successfully signing in to Backstage.
+
+Previous versions of this plugin had this behaviour disabled. Restoring this previous behaviour is now opt-in, and can
+be achieved by setting `pagerduty.enableUnauthenticatedAccess` to `true`.
+
+Example `app-config.yaml` excerpt:
+
+```yaml
+pagerduty:
+  enableUnauthenticatedAccess: true
+```
+
 ## Configure API Authorization
 
 The PagerDuty plugin requires access to PagerDuty APIs and so we need to configure our Backstage app with the necessary credentials to reach the APIs. This step requires you to use an access token - for OAuth - or an API token.
