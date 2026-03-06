@@ -4,7 +4,7 @@ Users of PagerDuty plugin for Backstage are typically customers of PagerDuty tha
 
 This can of course be automated through the use of PagerDuty's APIs but it's still something that requires human effort and for some teams it is difficult to justify the investment.
 
-For that reason we create a `PagerDutyPage` component that is intended to be the single place for advanced configurations related to this plugin.
+For that reason, we created a `PagerDutyPage` component that is intended to be the single place for advanced configurations related to this plugin.
 
 > At this point in time the `PagerDutyPage` only allows Admins to map existing PagerDuty services to Backstage entities. Other features will be released in the future.
 
@@ -92,11 +92,11 @@ Now, Backstage Admins will have the option to configure the mapping between Page
 
 ## Mapping services to entities
 
-Once you navigate to the new `/pagerduty` route will see a page similar to the one below. On the table you will see a list of all your PagerDuty services, it's current mapping and the mapping status.
+Once you navigate to the new `/pagerduty` route will see a page similar to the one below. On the table you will see a list of all your PagerDuty services, their current mapping, and the mapping status.
 
 ![service-entity-mapping](../images/service-entity-mapping.png)
 
-To define the mapping between existing PagerDuty services and Backstage entities you need to select the edit option on the right. Once you do so, a new modal screen will pop-up. Here, you can choose from a list of available Backstage entities that you want to map to the PagerDuty service.
+To define the mapping between existing PagerDuty services and Backstage entities you need to select the edit option on the right. Once you do so, a new modal screen will pop up. Here, you can choose from a list of available Backstage entities that you want to map to the PagerDuty service.
 
 !!! warning
     Currently we only support 1:1 mapping between PagerDuty services and Backstage entities due to a limitation on the `PagerDutyCard` that only supports one service at a time. There is work in progress to overcome this limitation.
@@ -113,7 +113,7 @@ Mappings defined on this page are not persisted to source code but instead kept 
 - **Out of Sync:** The configurations in the database and the configuration file do not match. In this occasion, the values from the database will take precedence as they are considered to be overrides.
 - **Not Mapped:** The PagerDuty service is not mapped to any Backstage entity.
 
-With this information the user can chose whether to manually persist the override to the source code and therefore ensure the configuration is in sync.
+With this information, the user can choose whether to manually persist the override to the source code and, therefore, ensure the configuration is in sync.
 
 !!! note
     We are evaluating an option to automatically create a PR in the source repo for the Backstage entity to ease the process of ensuring that configurations are in sync. Still, this feature is not available yet.

@@ -21,7 +21,7 @@ pagerDuty:
 ```
 
 !!! note
-    **PagerDuty accounts based in Europe use a different URL** so you need to override it here if that is your case.
+    **PagerDuty accounts based in Europe use a different URL** so you need to override it here if that applies to you.
 
     - EU-based accounts: 'https://api.eu.pagerduty.com'
     - US-based accounts: 'https://api.pagerduty.com'

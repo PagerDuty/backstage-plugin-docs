@@ -2,7 +2,7 @@
 
 The purpose of the **PagerDuty plugin for Backstage** is to bring some of the capabilities of PagerDuty into Backstage to reduce distractions and provide users more visibility on the status of each service.
 
-Currently the plugin provides a limited set of features that we view as the core capabilities used by Developers, Platform Engineers, SREs and other type of stakeholders. Theses are listed below.
+Currently the plugin provides a limited set of features that we view as the core capabilities used by Developers, Platform Engineers, SREs and other types of stakeholders. These are listed below.
 
 ## Frontend
 
@@ -10,12 +10,12 @@ The frontend plugin (`@pagerduty/backstage-plugin`) allows users to add a PagerD
 
 ### Quick view on current service status
 
-The plugin provides an easy mechanism to check the current status for the service, as well as some insights for the last 30 days and how well you are complying to Service Standards.
+The plugin provides an easy mechanism to check the current status for the service, as well as some insights for the last 30 days and how well you are complying with Service Standards.
 
 ![service-insights](images/service-insights.png)
 
 !!! note
-    By hovering the mouse over the information button on Service Standards card you will see a list of all the Service Standards and whether you are compliant or not.
+    By hovering the mouse over the information button on the Service Standards card you will see a list of all the Service Standards and whether you are compliant or not.
 
     ![service-standards-list](images/service-standards-list.png)
 
@@ -49,7 +49,7 @@ The PagerDuty plugin allows users to create incidents directly from Backstage. Y
 ![trigger-incident](images/trigger-incident.png)
 
 !!! note
-    This feature can be disabled if you don't want users to create incidents manually from Backstage. To do so check the steps on how to [enable read-only mode](/backstage-plugin-docs/advanced/enable-read-only-mode/).
+    This feature can be disabled if you don't want users to create incidents manually from Backstage. To do so, check the steps on how to [enable read-only mode](/backstage-plugin-docs/advanced/enable-read-only-mode/).
 
 ### Map existing PagerDuty services to Backstage entities
 
@@ -60,15 +60,15 @@ The PagerDuty plugin for Backstage allows Admins to add a `PagerDutyPage` compon
 
 ![service-entity-mapping](images/service-entity-mapping.png)
 
-This feature leverages the entity processor module to make the necessary updates to each Backstage entity configuration. The `PagerDutyPage` allows admins to see the status of each entity and decide wether to make the necessary change in source code to ensure the configuration is in sync.
+This feature leverages the entity processor module to make the necessary updates to each Backstage entity configuration. The `PagerDutyPage` allows admins to see the status of each entity and decide whether to make the necessary change in source code to ensure the configuration is in sync.
 
 ### Sync service dependencies between Backstage and PagerDuty
 
-The PagerDuty plugin allows users to keep service dependencies in-sync between Backstage and PagerDuty in an automated way. This feature is disabled by default but you can easily enable it in the PagerDuty Advanced Configurations Page in `PagerDutyPage`.
+The PagerDuty plugin allows users to keep service dependencies in sync between Backstage and PagerDuty in an automated way. This feature is disabled by default but you can easily enable it in the PagerDuty Advanced Configurations Page in `PagerDutyPage`.
 
 ![Service-dependency-synchronization-strategy](images/dependency-sync-strategy.png)
 
-This feature allows you to sync service dependencies from **Backstage to PagerDuty**, **PagerDuty to Backstage** or **merge the dependencies from both sides**.
+This feature allows you to sync service dependencies from **Backstage to PagerDuty**, **PagerDuty to Backstage**, or **merge the dependencies from both sides**.
 
 ## Backend
 
@@ -85,7 +85,7 @@ Follow [these steps](../advanced/create-service-software-template) to add the cu
 !!! warning
     **Alert Grouping** requires certain capabilities available in AIOps and Event Intelligence which are present in certain licensing models only.
 
-    If your account doesn't have these capabilities, alert grouping will sillently be ignored.
+    If your account doesn't have these capabilities, alert grouping will silently be ignored.
 
 ## The future
 

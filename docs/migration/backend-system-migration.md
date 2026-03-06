@@ -2,7 +2,7 @@
 
 Version 0.6.0 of `@pagerduty/backstage-plugin-backend` introduced support for Backstage's new backend system while remaining backwards compatible. So, if you want to continue using the legacy backend system you can do so. There's no rush!
 
-Still, a couple things changed. Due to an architecture change on the new backend system we add to extract the scaffolder actions to a new Backstage module ([@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)).
+Still, a couple things changed. Due to an architecture change on the new backend system we had to extract the scaffolder actions to a new Backstage module ([@pagerduty/backstage-plugin-scaffolder-actions](https://www.npmjs.com/package/@pagerduty/backstage-plugin-scaffolder-actions)).
 
 We are aware of the slight impact for existing users but with this decision we are able to support all customers and allow users to migrate their Backstage applications to the new model as they wish.
 
@@ -25,7 +25,7 @@ If you choose to upgrade to `@pagerduty/backstage-plugin-backend` 0.6.0 and stil
 
 ## The new backend system
 
-The new backend system reduces drastically the amount of code needed to setup plugins in Backstage. Assuming that you already migrated to the new backend system by following [these steps](https://backstage.io/docs/backend-system/building-backends/migrating/) outlined by the Backstage team, follow the steps below to configure the PagerDuty Scaffolder Actions.
+The new backend system drastically reduces the amount of code needed to set up plugins in Backstage. Assuming that you already migrated to the new backend system by following [these steps](https://backstage.io/docs/backend-system/building-backends/migrating/) outlined by the Backstage team, follow the steps below to configure the PagerDuty Scaffolder Actions.
 
 1. Add and install the new package
 
@@ -41,4 +41,4 @@ The new backend system reduces drastically the amount of code needed to setup pl
     backend.add(import('@pagerduty/backstage-plugin-scaffolder-actions'));
     ```
 
-You can now build and run your application. That's it! If you need more details on how to integrated the scaffolder action with Templates follow the guidance provided [here](/backstage-plugin-docs/advanced/create-service-software-template/#create-the-software-template).
+You can now build and run your application. That's it! If you need more details on how to integrate the scaffolder action with Templates follow the guidance provided [here](/backstage-plugin-docs/advanced/create-service-software-template/#create-the-software-template).

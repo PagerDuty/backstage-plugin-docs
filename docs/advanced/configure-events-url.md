@@ -21,8 +21,8 @@ pagerDuty:
 ```
 
 !!! note
-    **PagerDuty accounts based in Europe use a different URL** so you need to override it here if that is your case.
+    **PagerDuty accounts based in Europe use a different URL** so you need to override it here if that applies to you.
 
-    The correct url can be found in the Backstage integration page for your service on the PagerDuty console.
+    The correct URL can be found in the Backstage integration page for your service on the PagerDuty console.
 
     ![integration-events-api-url](../images/create-backstage-service-integration.png)

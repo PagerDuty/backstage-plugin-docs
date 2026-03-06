@@ -40,12 +40,12 @@ Backstage offers a single location where all the knowledge about services exists
 
 The plugin was initially started by Backstage and then transitioned into PagerDuty. The plugin currently offers a PagerDuty card for:
 
-- Displaying relevant PagerDuty information about an entity within Bacsktage, such as active incidents or recent changes.
-- Quickly check who is on call for a service.
-- Trigger an incident to the currently on call responder(s) for a service.
-- Easily map PagerDuty Services to Backstage Entities.
+- Displaying relevant PagerDuty information about an entity within Backstage, such as active incidents or recent changes.
+- Display who is on call for a service.
+- Trigger an incident for the currently on-call responder(s) for a service.
+- Map PagerDuty Services to Backstage Entities.
 
-The scope for the plugin is quite limited at the time but we are working on bringing new features based on customer feedback. We welcome all feedback so if you have any **bugs** to report or **feature requests** to raise we **THANK YOU**.
+The scope for the plugin is quite limited at this time, but we are working on bringing new features based on customer feedback. We welcome all feedback so if you have any **bugs** to report or **feature requests** to raise, we **THANK YOU**.
 
 - **Frontend plugin** ([bugs](https://github.com/PagerDuty/backstage-plugins/issues/new?assignees=&labels=backstage-plugin,bug&projects=&template=bug_report.md&title=)) ([feature requests](https://github.com/PagerDuty/backstage-plugins/issues/new?assignees=&labels=backstage-plugin,enhancement&projects=&template=feature_request.md&title=))
 - **Backend plugin** ([bugs](https://github.com/PagerDuty/backstage-plugins/issues/new?assignees=&labels=backstage-plugin-backend,bug&projects=&template=bug_report.md&title=)) ([feature requests](https://github.com/PagerDuty/backstage-plugins/issues/new?assignees=&labels=backstage-plugin-backend,enhancement&projects=&template=feature_request.md&title=))
@@ -62,7 +62,7 @@ We are working on some cool new features and capabilities. Here are some of them
 - [x] Improving UI for the existing PagerDuty Card
 - [x] Adding support for multiple PagerDuty accounts in the same Backstage instance
 - [x] Enabling service dependency sync between Backstage and PagerDuty
-- [ ] Adding support for adding multiple services on the same card
+- [ ] Adding support for multiple services on the same card
 - [ ] Adding support for a Team PagerDuty card
 - [ ] And many more ...
 

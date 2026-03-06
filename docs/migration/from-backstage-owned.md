@@ -1,6 +1,6 @@
 # From Backstage-owned plugin
 
-If you are migrating from the PagerDuty plugin that was maintained by Backstage ([@backstage/plugin-pagerduty](https://www.npmjs.com/package/@backstage/plugin-pagerduty)), the steps to migrate are pretty straight forward.
+If you are migrating from the PagerDuty plugin that was maintained by Backstage ([@backstage/plugin-pagerduty](https://www.npmjs.com/package/@backstage/plugin-pagerduty)), the steps to migrate are pretty straightforward.
 
 1. Remove the legacy PagerDuty plugin from your Backstage project
 
@@ -28,7 +28,7 @@ If you are migrating from the PagerDuty plugin that was maintained by Backstage 
 
 6. [Configure API credentials](/backstage-plugin-docs/getting-started/backstage/#configure-backend-plugin-api-credentials) to make requests to PagerDuty REST API
 
-7. Remove PagerDuty proxy configuration from you `app-config.yaml` file
+7. Remove PagerDuty proxy configuration from your `app-config.yaml` file
 
 8. Re-install dependencies and run Backstage locally to test that everything is working
 
