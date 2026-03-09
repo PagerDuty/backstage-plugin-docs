@@ -15,7 +15,7 @@ By doing so, it enables and configures the PagerDuty Card provided by the fronte
 yarn --cwd packages/backend add @pagerduty/backstage-plugin-scaffolder-actions # (1)!
 ```
 
-1. This command adds `@pagerduty/backstage-plugin-scaffolder` package to the `packages/backend` folder because it is a backend module.
+1. This command adds the `@pagerduty/backstage-plugin-scaffolder` package to the `packages/backend` folder because it is a backend module.
 
 ## Adding the custom action to the project
 
@@ -25,7 +25,7 @@ You can add the custom action to the project in two different ways. Using the **
 
 Backstage Scaffolder capabilities can be extended with custom actions that support Software Templates. For that to happen you need to update `packages/backend/src/plugins/scaffolder.ts` and add custom actions.
 
-Now, the list of scaffolder actions cannot be appended so you need re-create it and append your custom action. Otherwise all actions will be replaced just with yours.
+Now, the list of scaffolder actions cannot be appended to, so you need to re-create it and append your custom action. Otherwise all actions will be replaced just with yours.
 
 ```typescript
 
@@ -71,11 +71,11 @@ export default async function createPlugin(
 }
 ```
 
-This step registers the custom action with the Scaffolder and allows it to be used in the Software template which you will configure on next step.
+This step registers the custom action with the Scaffolder and allows it to be used in the Software template which you will configure in the next step.
 
 ### New backend system
 
-Backstage's new backend system simplifies the configuration of backend plugins and requires less code to setup plugins. To add the PagerDuty scaffolder actions to your Backstage application add the following in `packages/backend/src/index.ts`.
+Backstage's new backend system simplifies the configuration of backend plugins and requires less code to set up plugins. To add the PagerDuty scaffolder actions to your Backstage application add the following in `packages/backend/src/index.ts`.
 
 ```typescript
 backend.add(import('@pagerduty/backstage-plugin-scaffolder-actions'));
@@ -86,11 +86,11 @@ backend.add(import('@pagerduty/backstage-plugin-scaffolder-actions'));
 Software Templates can be simple or complex depending on the practices you are trying to standardize across your teams. Here, we provide a simple example of a template that requests basic information for a Backstage service and augments that with information relevant for creating the service in PagerDuty.
 
 !!! note
-    We assume you have an `examples/template/content` folder which is automatically create when you use `npx @backstage/create-app` to create your Backstage project.
+    We assume you have an `examples/template/content` folder which is automatically created when you use `npx @backstage/create-app` to create your Backstage project.
 
 ### Create project configuration file
 
-In your `examples/template/content` folder you should create `catalog-info.yaml` file if you don't have one already. Update its content to something like this:
+In your `examples/template/content` folder you should create `catalog-info.yaml` file if you don't have one already. Update its contents to something like this:
 
 ```yaml
 apiVersion: backstage.io/v1alpha1
@@ -107,10 +107,10 @@ spec:
   owner: guests
 ```
 
-In the software template we will either replace the values for the `integration-key`, `service-id`, `account` and `name` or completely remove the parameters from the configuration.
+In the software template, we will either replace the values for the `integration-key`, `service-id`, `account`, and `name`, or completely remove the parameters from the configuration.
 
 !!! note
-    You don't need to use this exact template but to automate the configuration for the PagerDuty Card you need to have at least the `integration-key` or the `service-id` parameters.
+    You don't need to use this exact template but to automate the configuration for the PagerDuty Card, you need to have at least the `integration-key` or the `service-id` parameter.
 
 ### Create the Software Template
 
@@ -131,7 +131,7 @@ Once all the information is provided by the user we will:
 !!! note
     For the following template to work, you need to configure the `apiToken` in `app-config.yaml` file. If you haven't done so, follow the steps in [Configure Backend plugin API credentials](/backstage-plugin-docs/getting-started/backstage/#optional-configure-backend-plugin-api-credentials)
 
-    **Note:** If you don't setup this property in your configuration, the backend plugin will fail to start.
+    **Note:** If you don't set up this property in your configuration, the backend plugin will fail to start.
 
 !!! note
     The UI component that allows users to select the *Escalation Policy* when creating a new service in PagerDuty depends on an open source component. For the template to work properly please install it before.
@@ -154,7 +154,7 @@ Once all the information is provided by the user we will:
       </ScaffolderFieldExtensions>
     </Route>
     ```
-Once all requirements are in-place, create a `template.yaml` file under `examples/template` and copy the following code in there.
+Once all requirements are in place, create a `template.yaml` file under `examples/template` and copy the following code into it.
 
 ```yaml
 apiVersion: scaffolder.backstage.io/v1beta3
@@ -268,7 +268,7 @@ spec:
 
 1. Open source dropdown component from `@roadiehq` that queries data from a local API
 2. Options for the dropdown component
-3. The local api exposed by the PagerDuty backend plugin that retrieves a list of key/value pairs
+3. The local API exposed by the PagerDuty backend plugin that retrieves a list of key/value pairs
 4. This UI field is optional. If you want to enforce a specific method you can just set the value in the backend component.
 5. This parameter is optional. You can enforce a specific method by choosing 'intelligent', 'time' or 'content_based'. If not defined, no alert grouping will be configured.
    **[Requires AIOps](https://www.pagerduty.com/platform/aiops/).**

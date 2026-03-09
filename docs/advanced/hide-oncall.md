@@ -1,6 +1,6 @@
 # Hide 'on-call' section
 
-The PagerDuty plugin allows users to view who is currently on-call for the escalation policy assigned to the service. This feature is enabled by default but you can choose to completely hide it.
+The PagerDuty plugin allows users to view who is currently on-call for the escalation policy assigned to the service. This feature is enabled by default, but you can choose to completely hide it.
 
 ![on-call-engineer](../images/view-oncall-engineers.png)
 

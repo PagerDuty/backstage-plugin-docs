@@ -19,11 +19,11 @@ Perform the following steps on PagerDuty before integrating the plugin in Backst
 ### **Create a service integration for Backstage (optional)**
 
 !!! note
-    In one the latest releases of the plugin (@pagerduty/backstage-plugin-backend:0.9.0) we introduced a mechanism to automatically create a Backstage integration on every service mapped to a Backstage instance that doesn't have an integration setup yet. This saves admins time setting up the the integration between Backstage entities and PagerDuty services.
+    In one of the latest releases of the plugin (@pagerduty/backstage-plugin-backend:0.9.0) we introduced a mechanism to automatically create a Backstage integration on every service mapped to a Backstage instance that doesn't have an integration setup yet. This saves admins time setting up the integration between Backstage entities and PagerDuty services.
 
     You might still want to create integrations yourself in some situations, for instance, if you are using Terraform to configure your PagerDuty services. In that case, the plugin will just pick this information up and add it as an annotation on the entity.
 
-Creating a service integration in PagerDuty is the default mechanism to connect services with alerts coming from third-party tools and platforms. In order to create a service integration you can follow **three different approches**:
+Creating a service integration in PagerDuty is the default mechanism to connect services with alerts coming from third-party tools and platforms. In order to create a service integration you can follow **three different approaches**:
 
 1. **If you are adding your integration to an existing service:**
      1. From the top menu, select **Services**.
@@ -55,7 +55,7 @@ To use PagerDuty REST APIs you need to have either an **API Token** or a registe
 
 In order to use **Scoped OAuth** you need to register an App in PagerDuty. Follow the next steps to register an app, define the necessary permissions and capture the necessary information to generate a temporary access token.
 
-1. Log int to your PagerDuty account
+1. Log in to your PagerDuty account
 2. From the top menu, select **Integrations**.
 3. Select **App Registration** from the menu.
 4. Once in the app registration page, select **+ New App**.
@@ -66,7 +66,7 @@ In order to use **Scoped OAuth** you need to register an App in PagerDuty. Follo
 
 7. Select **Scoped OAuth** as the preferred Authorization mechanism.
    ![scoped-oauth-checkbox](../images/scoped-oauth-authorization.png)
-8. On permission scope we recommend you to select the following permissions to ensure that the plugin works as expected. Once you select them click on **Register App*.
+8. For the permission scope, we recommend selecting the following permissions to ensure that the plugin works as expected. Once you select them, click on **Register App**.
 
     ```typescript
         abilities.read // used in scaffolder only
@@ -93,7 +93,7 @@ If you were successful in following the above steps you are ready to move to the
 #### Generate a General Access REST API Token
 
 !!! note
-    **General Access Tokens** provide an API token with the **full access** to the PagerDuty Account by default. Still, you can choose to create API tokens with **read-only access** by following the action mentioned on step 4.
+    **General Access Tokens** provide an API token with the **full access** to the PagerDuty Account by default. Still, you can choose to create API tokens with **read-only access** by following the action mentioned in step 4.
 
 To create an API Key to use with Backstage you:
 
@@ -103,7 +103,7 @@ To create an API Key to use with Backstage you:
 4. Enter a Description to help you identify the key later
 
     !!! note
-        For added security you may select the **Read-only API Key** check-box. Current capabilities of this plugin only perform read operations on the API so it is safe to do so.
+        For added security you may select the **Read-only API Key** checkbox. The current capabilities of this plugin only perform read operations on the API, so it is safe to do so.
 
         ![create-general-api-key](../images/create-general-api-key.png)
 

@@ -1,11 +1,11 @@
 # Hide change events
 
-The PagerDuty plugin allows users to view the recent changes made to components integrated with their PagerDuty service. This feature is enabled by default but you can choose to disable it.
+The PagerDuty plugin allows users to view the recent changes made to components integrated with their PagerDuty service. This feature is enabled by default, but you can choose to disable it.
 
 ![change-events-enabled](../images/change-events-enabled.png)
 
 !!! note
-    In order to ingest __change events__ in PagerDuty you need to have an AIOps license. If you don't have one, or you are missing the necessary permissions, you will see the following error.
+    In order to ingest __change events__ in PagerDuty you need to have an AIOps license. If you don't have one or are missing the necessary permissions, you will see the following error.
 
     ![aiops-license-missing](../images/change-events-forbidden.png)
 
