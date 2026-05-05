@@ -53,14 +53,13 @@ The PagerDuty plugin allows users to create incidents directly from Backstage. Y
 
 ### Map existing PagerDuty services to Backstage entities
 
-The PagerDuty plugin for Backstage allows Admins to add a `PagerDutyPage` component to their Backstage installation in order to easily map their existing PagerDuty services to Backstage entities without the need to make code changes to the service configuration.
+The PagerDuty plugin for Backstage allows Admins to add a `PagerDutyPage` component to their Backstage installation to easily map their PagerDuty services to Backstage entities without needing code changes to the service configuration.
 
-!!! warning
-    This feature currently supports 1:1 mapping between services and entities due to a limitation on the `PagerDutyCard` that only allows one service to be configured at a time.
+The mapping interface includes intelligent service suggestions, searchable drop-downs, and team-based recommendations to streamline the setup process, especially for organizations with large service catalogs.
 
 ![service-entity-mapping](images/service-entity-mapping.png)
 
-This feature leverages the entity processor module to make the necessary updates to each Backstage entity configuration. The `PagerDutyPage` allows admins to see the status of each entity and decide whether to make the necessary change in source code to ensure the configuration is in sync.
+This feature leverages the entity processor module to make the necessary updates to each Backstage entity automatically. The searchable interface and intelligent suggestions help you quickly find and map services, especially useful for large service catalogs with hundreds or thousands of services. Admins can decide whether to make the necessary changes in source code to ensure the mapping stays in sync.
 
 ### Sync service dependencies between Backstage and PagerDuty
 

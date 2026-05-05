@@ -6,8 +6,6 @@ This can of course be automated through the use of PagerDuty's APIs but it's sti
 
 For that reason, we created a `PagerDutyPage` component that is intended to be the single place for advanced configurations related to this plugin.
 
-> At this point in time the `PagerDutyPage` only allows Admins to map existing PagerDuty services to Backstage entities. Other features will be released in the future.
-
 ## Installing dependencies
 
 In order to set this up in your Backstage instance you should install the necessary packages first by running the following command. This command will install the entity processor module that we will configure later on.
@@ -92,16 +90,23 @@ Now, Backstage Admins will have the option to configure the mapping between Page
 
 ## Mapping services to entities
 
-Once you navigate to the new `/pagerduty` route will see a page similar to the one below. On the table you will see a list of all your PagerDuty services, their current mapping, and the mapping status.
+Once you navigate to the new `/pagerduty` route you will see a page similar to the one below. On the table you will see a list of all your Backstage entities, their current mapping, and the mapping status.
 
 ![service-entity-mapping](../images/service-entity-mapping.png)
 
-To define the mapping between existing PagerDuty services and Backstage entities you need to select the edit option on the right. Once you do so, a new modal screen will pop up. Here, you can choose from a list of available Backstage entities that you want to map to the PagerDuty service.
+To define the mapping between existing PagerDuty services and Backstage entities you need to select the edit option on the right. Once you do so, a new modal screen will pop up. Here, you can choose from a list of suggested PagerDuty services that you want to map to the Backstage entity. Use Auto-Mapping to receive intelligent suggestions that will help you quickly find and map services.
 
-!!! warning
-    Currently we only support 1:1 mapping between PagerDuty services and Backstage entities due to a limitation on the `PagerDutyCard` that only supports one service at a time. There is work in progress to overcome this limitation.
+![service-auto-mapping-modal](../images/service-entity-auto-mapping-modal.png)
 
-![service-mapping-modal](../images/service-entity-mapping-modal.png)
+### Editing a mapping
+
+Click the pencil icon to open the mapping editor with enhanced search and filtering. Quickly locate the right entity by searching for service names or IDs, or filter by team to see contextually relevant suggestions.
+
+![service-mapping-edit](../images/service-entity-mapping-modal.png)
+
+### Removing a mapping
+
+To unmap a service, click the pencil icon and select "None" from the dropdown.
 
 Once you select a new mapping, Backstage Entity Processor will be instructed to run and update the Backstage entity configuration. This is a best-effort action and the configuration update might not be immediate.
 
