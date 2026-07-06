@@ -63,7 +63,7 @@ We are working on some cool new features and capabilities. Here are some of them
 - [x] Adding support for multiple PagerDuty accounts in the same Backstage instance
 - [x] Enabling service dependency sync between Backstage and PagerDuty
 - [x] Service Mapping
-- [ ] Service Custom Field Mapping
+- [x] Service Custom Field Mapping
 - [ ] Runbook Automation integration
 
 For more details on what is in progress and what we are considering refer to the [project page](https://github.com/orgs/PagerDuty/projects/22) on GitHub.
