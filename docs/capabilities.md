@@ -69,6 +69,14 @@ The PagerDuty plugin allows users to keep service dependencies in sync between B
 
 This feature allows you to sync service dependencies from **Backstage to PagerDuty**, **PagerDuty to Backstage**, or **merge the dependencies from both sides**.
 
+### Sync Backstage entity data to PagerDuty Custom Fields
+
+The PagerDuty plugin for Backstage allows Admins to map Backstage entity properties to PagerDuty Custom Fields, keeping your PagerDuty services enriched with up-to-date context from your Backstage catalog.
+
+The mapping interface lets you define a field name and an entity path, so the right data — runbook links, team ownership, and more — flows automatically into PagerDuty during catalog processing.
+
+![custom-field-mapping](images/custom-field-mapping.png)
+
 ## Backend
 
 The backend plugin (`@pagerduty/backstage-plugin-backend`) enables additional security when using the PagerDuty APIs and enables easy adoption of PagerDuty best practices through custom Backstage Scaffolder actions.
