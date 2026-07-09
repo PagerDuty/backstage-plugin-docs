@@ -24,6 +24,27 @@ yarn --cwd packages/backend add @pagerduty/backstage-plugin-backend # (1)!
 
 **That's it!** Now it's time to add the plugin to Backstage and configure your services.
 
+## Installing the Entity Processor (recommended)
+
+The frontend and backend plugins installed above are all you need for the plugin's core functionality, such as showing PagerDuty data on services that are mapped through `catalog-info.yaml` annotations.
+
+However, most of the plugin's synchronization features — mapping services dynamically through the `/pagerduty` UI, [service dependency sync](/backstage-plugin-docs/advanced/configure-service-dependency-sync), and [custom field sync](/backstage-plugin-docs/capabilities/#sync-backstage-entity-data-to-pagerduty-custom-fields) — require an additional package called the **Entity Processor**.
+
+!!! note
+    The Entity Processor is optional, but **highly recommended** for most setups. See [Entity Processor](/backstage-plugin-docs/advanced/entity-processor) for a full explanation of what it does and what won't work without it.
+
+To install it, run the following command from your Backstage root directory.
+
+```bash
+yarn --cwd packages/backend add @pagerduty/backstage-plugin-entity-processor
+```
+
+Then enable it in `packages/backend/src/index.ts`:
+
+```typescript
+backend.add(import('@pagerduty/backstage-plugin-entity-processor'));
+```
+
 ## Add the frontend plugin to your application
 
 The frontend plugin needs to be added to your application, and currently, that requires some code changes to the Backstage application. We will do that by updating the `EntityPage.tsx` file in `packages/app/src/components/catalog`.

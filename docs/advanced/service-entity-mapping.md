@@ -6,36 +6,11 @@ This can of course be automated through the use of PagerDuty's APIs but it's sti
 
 For that reason, we created a `PagerDutyPage` component that is intended to be the single place for advanced configurations related to this plugin.
 
-## Installing dependencies
-
-In order to set this up in your Backstage instance you should install the necessary packages first by running the following command. This command will install the entity processor module that we will configure later on.
-
-```bash
-yarn --cwd packages/backend add @pagerduty/backstage-plugin-entity-processor
-```
+!!! note
+    This capability relies on the **Entity Processor** module. See [Entity Processor](entity-processor.md) for what it does, whether you need it, and how to install it.
 
 !!! note
     The following instructions assume that you already installed the frontend and backend plugin as described in the [Getting Started page](/backstage-plugin-docs/getting-started/backstage).
-
-## Configuring the Entity Processor
-
-The Entity Processor module is one of the key components of this capability as it allows for entity mapping configurations that were persisted into the Backstage database to be applied to each Backstage entity configuration.
-
-You can enable the entity processor in your Backstage instance by injecting the dependency in the backend system in `packages/backend/index.ts`.
-
-```typescript
-  import { createBackend } from '@backstage/backend-defaults';
-
-  const backend = createBackend();
-  
-  ...
-
-  backend.add(import('@pagerduty/backstage-plugin-entity-processor')); // <-- This is the line you want to add
-  
-  backend.start();
-```
-
-And that is it for the entity processor module. This module will process all Backstage entities and if there are any changes persisted to the database they will be applied automatically.
 
 ## Adding the PagerDutyPage component
 

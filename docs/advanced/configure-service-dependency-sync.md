@@ -4,6 +4,9 @@ The PagerDuty plugin allows users who use Backstage as their service catalog to 
 
 This feature is very powerful for users that want to leverage [PagerDuty Status Pages](https://www.pagerduty.com/platform/business-ops/status-pages/) properly but are limited by the fact that they don't have service dependencies configured in PagerDuty. With this feature, the plugin will do this automatically for you.
 
+!!! warning
+    This feature requires the [Entity Processor](entity-processor.md) module to be installed — without it, dependency sync will not run.
+
 !!! note
     Only the Backstage entities that have corresponding services in PagerDuty will get their service dependencies mapped. This feature is powered by the `CatalogProcessor` and therefore if you make changes on your Backstage entity configuration they will, in time, be mapped to PagerDuty.
 

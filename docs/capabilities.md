@@ -59,7 +59,7 @@ The mapping interface includes intelligent service suggestions, searchable drop-
 
 ![service-entity-mapping](images/service-entity-mapping.png)
 
-This feature leverages the entity processor module to make the necessary updates to each Backstage entity automatically. The searchable interface and intelligent suggestions help you quickly find and map services, especially useful for large service catalogs with hundreds or thousands of services. Admins can decide whether to make the necessary changes in source code to ensure the mapping stays in sync.
+This feature leverages the [Entity Processor](advanced/entity-processor.md) module to make the necessary updates to each Backstage entity automatically. The searchable interface and intelligent suggestions help you quickly find and map services, especially useful for large service catalogs with hundreds or thousands of services. Admins can decide whether to make the necessary changes in source code to ensure the mapping stays in sync.
 
 ### Sync service dependencies between Backstage and PagerDuty
 
@@ -69,6 +69,8 @@ The PagerDuty plugin allows users to keep service dependencies in sync between B
 
 This feature allows you to sync service dependencies from **Backstage to PagerDuty**, **PagerDuty to Backstage**, or **merge the dependencies from both sides**.
 
+This feature requires the [Entity Processor](advanced/entity-processor.md) module to be installed.
+
 ### Sync Backstage entity data to PagerDuty Custom Fields
 
 The PagerDuty plugin for Backstage allows Admins to map Backstage entity properties to PagerDuty Custom Fields, keeping your PagerDuty services enriched with up-to-date context from your Backstage catalog.
@@ -76,6 +78,8 @@ The PagerDuty plugin for Backstage allows Admins to map Backstage entity propert
 The mapping interface lets you define a field name and an entity path, so the right data — runbook links, team ownership, and more — flows automatically into PagerDuty during catalog processing.
 
 ![custom-field-mapping](images/custom-field-mapping.png)
+
+This feature requires the [Entity Processor](advanced/entity-processor.md) module to be installed.
 
 ## Backend
 
