@@ -59,7 +59,10 @@ The mapping interface includes intelligent service suggestions, searchable drop-
 
 ![service-entity-mapping](images/service-entity-mapping.png)
 
-This feature leverages the [Entity Processor](advanced/entity-processor.md) module to make the necessary updates to each Backstage entity automatically. The searchable interface and intelligent suggestions help you quickly find and map services, especially useful for large service catalogs with hundreds or thousands of services. Admins can decide whether to make the necessary changes in source code to ensure the mapping stays in sync.
+The searchable interface and intelligent suggestions help you quickly find and map services, especially useful for large service catalogs with hundreds or thousands of services. Admins can decide whether to make the necessary changes in source code to ensure the mapping stays in sync.
+
+!!! warning
+    This feature requires the [Entity Processor](advanced/entity-processor.md) module to be installed — without it, mappings created here will not sync to your Backstage entities.
 
 ### Sync service dependencies between Backstage and PagerDuty
 
@@ -69,7 +72,8 @@ The PagerDuty plugin allows users to keep service dependencies in sync between B
 
 This feature allows you to sync service dependencies from **Backstage to PagerDuty**, **PagerDuty to Backstage**, or **merge the dependencies from both sides**.
 
-This feature requires the [Entity Processor](advanced/entity-processor.md) module to be installed.
+!!! warning
+    This feature requires the [Entity Processor](advanced/entity-processor.md) module to be installed — without it, dependency sync will not run.
 
 ### Sync Backstage entity data to PagerDuty Custom Fields
 
@@ -79,7 +83,8 @@ The mapping interface lets you define a field name and an entity path, so the ri
 
 ![custom-field-mapping](images/custom-field-mapping.png)
 
-This feature requires the [Entity Processor](advanced/entity-processor.md) module to be installed.
+!!! warning
+    This feature requires the [Entity Processor](advanced/entity-processor.md) module to be installed — without it, custom field sync will not run.
 
 ## Backend
 
