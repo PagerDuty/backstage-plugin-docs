@@ -26,22 +26,24 @@ Without the Entity Processor installed:
 - **Custom field sync to PagerDuty does not run.** Backstage entity data mapped to PagerDuty Custom Fields is never pushed.
 - YAML-defined mappings are never backfilled into the database, so mapping-status bookkeeping (e.g. the "in sync" / "out of sync" indicators on the `/pagerduty` page) won't reflect them accurately.
 
-## Installing dependencies
+## Installing and configuring the Entity Processor
 
-In order to set this up in your Backstage instance you should install the necessary package first by running the following command.
+The setup steps differ depending on whether you are running a self-hosted Backstage instance or Backstage Portal. Follow the section that matches your environment.
+
+!!! note
+    The following instructions assume that you already installed the frontend and backend plugin as described in the [Getting Started page](/backstage-plugin-docs/getting-started/backstage).
+
+### Self-hosted Backstage
+
+In a self-hosted Backstage instance you install the package and wire it into the backend system yourself.
+
+First, install the package from your Backstage root directory.
 
 ```bash
 yarn --cwd packages/backend add @pagerduty/backstage-plugin-entity-processor
 ```
 
-!!! note
-    The following instructions assume that you already installed the frontend and backend plugin as described in the [Getting Started page](/backstage-plugin-docs/getting-started/backstage).
-
-## Configuring the Entity Processor
-
-The Entity Processor module is one of the key components of this capability as it allows for entity mapping configurations that were persisted into the Backstage database to be applied to each Backstage entity configuration.
-
-You can enable the entity processor in your Backstage instance by injecting the dependency in the backend system in `packages/backend/index.ts`.
+Then enable the Entity Processor by injecting the dependency in the backend system in `packages/backend/src/index.ts`.
 
 ```typescript
   import { createBackend } from '@backstage/backend-defaults';
@@ -55,4 +57,18 @@ You can enable the entity processor in your Backstage instance by injecting the 
   backend.start();
 ```
 
-And that is it for the entity processor module. This module will process all Backstage entities and if there are any changes persisted to the database they will be applied automatically.
+And that is it for the Entity Processor module. This module will process all Backstage entities and if there are any changes persisted to the database they will be applied automatically.
+
+### Backstage Portal
+
+Backstage Portal manages backend modules through its UI, so there are no code changes to make. After installing the package, you enable the module from the Portal admin interface.
+
+1. Install the `@pagerduty/backstage-plugin-entity-processor` package in your Portal instance.
+2. In the left navigation bar, go to **Plugins**.
+3. Select the **Catalog** plugin.
+4. Open the **Modules** tab.
+5. Locate the `@pagerduty/backstage-plugin-entity-processor` module and click **Manage module**.
+6. Click **Start**.
+7. Wait for the **Applying new configuration...** message to disappear.
+
+Once the configuration has been applied, the Entity Processor is active. It will process all Backstage entities and automatically apply any changes persisted to the database.

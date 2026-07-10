@@ -33,7 +33,11 @@ However, most of the plugin's synchronization features — mapping services dyna
 !!! note
     The Entity Processor is optional, but **highly recommended** for most setups. See [Entity Processor](/backstage-plugin-docs/advanced/entity-processor) for a full explanation of what it does and what won't work without it.
 
-To install it, run the following command from your Backstage root directory.
+The setup steps differ depending on whether you are running a self-hosted Backstage instance or Backstage Portal. Follow the section that matches your environment.
+
+#### Self-hosted Backstage
+
+Install it by running the following command from your Backstage root directory.
 
 ```bash
 yarn --cwd packages/backend add @pagerduty/backstage-plugin-entity-processor
@@ -44,6 +48,18 @@ Then enable it in `packages/backend/src/index.ts`:
 ```typescript
 backend.add(import('@pagerduty/backstage-plugin-entity-processor'));
 ```
+
+#### Backstage Portal
+
+Backstage Portal manages backend modules through its UI, so there are no code changes to make. After installing the package, enable the module from the Portal admin interface.
+
+1. Install the `@pagerduty/backstage-plugin-entity-processor` package in your Portal instance.
+2. In the left navigation bar, go to **Plugins**.
+3. Select the **Catalog** plugin.
+4. Open the **Modules** tab.
+5. Locate the `@pagerduty/backstage-plugin-entity-processor` module and click **Manage module**.
+6. Click **Start**.
+7. Wait for the **Applying new configuration...** message to disappear.
 
 ## Add the frontend plugin to your application
 
