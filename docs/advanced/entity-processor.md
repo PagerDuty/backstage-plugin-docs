@@ -33,7 +33,7 @@ The setup steps differ depending on whether you are running a self-hosted Backst
 !!! note
     The following instructions assume that you already installed the frontend and backend plugin as described in the [Getting Started page](/backstage-plugin-docs/getting-started/backstage).
 
-### Backstage
+### Self-hosted Backstage
 
 In a self-hosted Backstage instance you install the package and wire it into the backend system yourself.
 

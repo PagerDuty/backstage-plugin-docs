@@ -35,7 +35,7 @@ However, most of the plugin's synchronization features — mapping services dyna
 
 The setup steps differ depending on whether you are running a self-hosted Backstage instance or Backstage Portal. Follow the section that matches your environment.
 
-#### Backstage
+#### Self-hosted Backstage
 
 Install it by running the following command from your Backstage root directory.
 
