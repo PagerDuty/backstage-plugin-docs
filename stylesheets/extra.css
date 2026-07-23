@@ -1,0 +1,9 @@
+:root {
+
+    /* Primary color shades */
+    --md-primary-fg-color: #048a24;
+    --md-primary-bg-color: #FFFFFF;
+
+    /* Accent color shades */
+     --md-accent-fg-color: #005a24;
+}
