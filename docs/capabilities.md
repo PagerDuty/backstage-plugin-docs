@@ -86,6 +86,9 @@ The mapping interface lets you define a field name and an entity path, so the ri
 !!! warning
     This feature requires the [Entity Processor](advanced/entity-processor.md) module to be installed — without it, custom field sync will not run.
 
+!!! note
+    **Custom Field Deletion:** Field deletion is one-directional — deleting the mapped field in Backstage automatically deletes it in PagerDuty. If a mapped custom field is deleted directly in PagerDuty, it breaks the sync, and the next sync attempt will log an error until the field is re-created or the mapping is removed in Backstage.
+
 ## Backend
 
 The backend plugin (`@pagerduty/backstage-plugin-backend`) enables additional security when using the PagerDuty APIs and enables easy adoption of PagerDuty best practices through custom Backstage Scaffolder actions.
